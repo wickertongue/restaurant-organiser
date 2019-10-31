@@ -1,4 +1,4 @@
-# restaurant-react-spring-project
+# Restaurant-React-Spring-Project
 
 You task is to build a full stack application using a Java (Spring) back-end and a JavaScript (React) front-end. You are building *one* integrated product and good communication between front-end and back-end developers will be crucial.
 
