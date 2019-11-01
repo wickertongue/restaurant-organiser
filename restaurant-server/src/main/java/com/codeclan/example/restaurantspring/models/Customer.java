@@ -24,7 +24,7 @@ public class Customer {
 
     public Customer(String name) {
         this.name = name;
-        this.bookings = new ArrayList<Booking>;
+        this.bookings = new ArrayList<>();
     }
 
     public Customer() {
