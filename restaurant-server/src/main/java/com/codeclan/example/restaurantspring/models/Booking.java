@@ -1,6 +1,15 @@
 package com.codeclan.example.restaurantspring.models;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class Booking {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private int time;
     private int date;
     private Customer customer;
@@ -15,6 +24,17 @@ public class Booking {
         this.duration = 120;
         this.tables = tables;
         this.partySize = partySize;
+    }
+
+    public Booking() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getTime() {
