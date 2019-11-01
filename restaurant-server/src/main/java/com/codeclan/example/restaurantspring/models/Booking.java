@@ -1,8 +1,6 @@
 package com.codeclan.example.restaurantspring.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 
 public class Booking {
@@ -13,11 +11,24 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "time")
     private int time;
+
+    @Column(name = "date")
     private int date;
+
+    @Column(name = "customer")
     private Customer customer;
+
+    @Column(name = "duration")
     private int duration;
+
+    @Column(name = "tables")
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
     private ArrayList<DinnerTable> tables;
+
+    @Column(name = "party_size")
     private int partySize;
 
     // Constructors
