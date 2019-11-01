@@ -27,6 +27,15 @@ class RestaurantBox extends Component {
     }
   }
 
+  // componentDidMount() {
+  //   const url='http://localhost:8080/bookings';
+  //
+  //   fetch(url)
+  //     .then(res => res.json())
+  //     .then(bookings => this.setState({ bookings: bookings}))
+  //     .catch(err => console.error);
+  // }
+
   render() {
     return (
       <div className="booking-list">
