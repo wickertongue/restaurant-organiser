@@ -15,10 +15,10 @@ public class Booking {
     private Long id;
 
     @Column(name = "time")
-    private int time;
+    private String time;
 
     @Column(name = "date")
-    private int date;
+    private String date;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
@@ -47,7 +47,7 @@ public class Booking {
 
     // Constructors
 
-    public Booking(int time, int date , int partySize, Customer customer) {
+    public Booking(String time, String date, int partySize, Customer customer) {
         this.time = time;
         this.date = date;
         this.customer = customer;
@@ -59,7 +59,13 @@ public class Booking {
     public Booking() {
     }
 
-    // Getters and Setters
+    // Misc Methods
+
+    public void addTable(DinnerTable table) {
+        this.tables.add(table);
+    }
+
+// Getters and Setters
 
     public void setTables(List<DinnerTable> tables) {
         this.tables = tables;
@@ -73,19 +79,19 @@ public class Booking {
         this.id = id;
     }
 
-    public int getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

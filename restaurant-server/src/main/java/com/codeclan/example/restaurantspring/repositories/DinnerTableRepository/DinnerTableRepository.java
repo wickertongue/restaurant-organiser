@@ -1,4 +1,7 @@
 package com.codeclan.example.restaurantspring.repositories.DinnerTableRepository;
 
-public interface DinnerTableRepository {
+import com.codeclan.example.restaurantspring.models.DinnerTable;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DinnerTableRepository extends JpaRepository<DinnerTable, Long>, DinnerTableRepositoryCustom {
 }
