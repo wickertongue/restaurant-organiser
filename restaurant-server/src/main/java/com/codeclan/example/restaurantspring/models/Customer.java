@@ -4,19 +4,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Table {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int capacity;
+    private String name;
 
-    public Table(int capacity) {
-        this.capacity = capacity;
+    public Customer(String name) {
+        this.name = name;
     }
 
-    public Table() {
+    public Customer() {
     }
 
     public Long getId() {
@@ -27,11 +27,11 @@ public class Table {
         this.id = id;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public String getName() {
+        return name;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setName(String name) {
+        this.name = name;
     }
 }
