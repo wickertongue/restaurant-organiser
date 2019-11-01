@@ -1,8 +1,11 @@
 package com.codeclan.example.restaurantspring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -17,8 +20,9 @@ public class Customer {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "customer")
-    private ArrayList<Booking> bookings;
+    @JsonIgnoreProperties(value = "customer")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    private List<Booking> bookings;
 
     // Constructors
 
@@ -32,7 +36,12 @@ public class Customer {
 
     // Getters & Setters
 
-    public ArrayList<Booking> getBookings() {
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public List<Booking> getBookings() {
         return bookings;
     }
 

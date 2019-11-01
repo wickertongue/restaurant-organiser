@@ -2,7 +2,10 @@ package com.codeclan.example.restaurantspring.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
+@Entity
+@Table(name="bookings")
 public class Booking {
 
     // Properties
@@ -17,16 +20,27 @@ public class Booking {
     @Column(name = "date")
     private int date;
 
-    @Column(name = "customer")
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     @Column(name = "duration")
     private int duration;
 
-    @Column(name = "tables")
-    @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
-    private ArrayList<DinnerTable> tables;
+    @ManyToMany
+    @JoinTable(
+            name = "dinnertables_bookings",
+            joinColumns = { @JoinColumn(
+                    name = "booking_id",
+                    nullable = false,
+                    updatable = false)
+            },
+            inverseJoinColumns = { @JoinColumn(
+                    name = "dinnerTable_id",
+                    nullable = false,
+                    updatable = false)
+            })
+    private List<DinnerTable> tables;
 
     @Column(name = "party_size")
     private int partySize;
@@ -38,7 +52,7 @@ public class Booking {
         this.date = date;
         this.customer = customer;
         this.duration = 120;
-        this.tables = tables;
+        this.tables = new ArrayList<>();
         this.partySize = partySize;
     }
 
@@ -46,6 +60,10 @@ public class Booking {
     }
 
     // Getters and Setters
+
+    public void setTables(List<DinnerTable> tables) {
+        this.tables = tables;
+    }
 
     public Long getId() {
         return id;
@@ -87,7 +105,7 @@ public class Booking {
         this.duration = duration;
     }
 
-    public ArrayList<DinnerTable> getTables() {
+    public List<DinnerTable> getTables() {
         return tables;
     }
 
