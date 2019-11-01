@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import BookingList from "../components/BookingList";
+import BookingForm from "../components/BookingForm";
 
 class RestaurantBox extends Component {
 
@@ -40,6 +41,7 @@ class RestaurantBox extends Component {
     return (
       <div className="booking-list">
         <h2>This is the RestaurantBox</h2>
+        <BookingForm />
         <BookingList data={this.state.data}/>
       </div>
     );
