@@ -1,23 +1,30 @@
 package com.codeclan.example.restaurantspring.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-public class Table {
+@Entity
+@Table(name = "tables")
+public class DinnerTable {
+
+    // Properties
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "capacity")
     private int capacity;
 
-    public Table(int capacity) {
+    // Constructors
+
+    public DinnerTable(int capacity) {
         this.capacity = capacity;
     }
 
-    public Table() {
+    public DinnerTable() {
     }
+
+    // Getters & Setters
 
     public Long getId() {
         return id;

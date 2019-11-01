@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public class Booking {
 
+    // Properties
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,8 +17,10 @@ public class Booking {
     private int date;
     private Customer customer;
     private int duration;
-    private ArrayList<Table> tables;
+    private ArrayList<DinnerTable> tables;
     private int partySize;
+
+    // Constructors
 
     public Booking(int time, int date , int partySize, Customer customer) {
         this.time = time;
@@ -29,6 +33,8 @@ public class Booking {
 
     public Booking() {
     }
+
+    // Getters and Setters
 
     public Long getId() {
         return id;
@@ -70,11 +76,11 @@ public class Booking {
         this.duration = duration;
     }
 
-    public ArrayList<Table> getTables() {
+    public ArrayList<DinnerTable> getTables() {
         return tables;
     }
 
-    public void setTables(ArrayList<Table> tables) {
+    public void setTables(ArrayList<DinnerTable> tables) {
         this.tables = tables;
     }
 

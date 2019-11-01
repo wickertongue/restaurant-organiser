@@ -1,16 +1,22 @@
 package com.codeclan.example.restaurantspring.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "customers")
 public class Customer {
+
+    // Properties
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name")
     private String name;
+
+    // Constructors
 
     public Customer(String name) {
         this.name = name;
@@ -18,6 +24,8 @@ public class Customer {
 
     public Customer() {
     }
+
+    // Getters & Setters
 
     public Long getId() {
         return id;
