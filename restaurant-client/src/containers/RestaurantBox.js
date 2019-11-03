@@ -42,9 +42,9 @@ class RestaurantBox extends Component {
     return (
       <div className="booking-list">
         <h2>This is the RestaurantBox</h2>
-        <BookingForm />
-        <BookingList data={this.state.data}/>
         <TableLayout/>
+        <BookingList data={this.state.data}/>
+        <BookingForm />
       </div>
     );
   }
