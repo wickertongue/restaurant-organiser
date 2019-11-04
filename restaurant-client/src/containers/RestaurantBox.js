@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import BookingList from "../components/BookingList";
 import BookingForm from "../components/BookingForm";
 import TableLayout from "../components/TableLayout";
+import ColorChange from "../components/ColorChange";
 
 class RestaurantBox extends Component {
 
