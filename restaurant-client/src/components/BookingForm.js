@@ -16,7 +16,7 @@ class BookingForm extends Component {
         this.handlePartySizeChange = this.handlePartySizeChange.bind(this);
         this.handleTableChange = this.handleTableChange.bind(this);
 
-        this.handleSubmit = this.handleSubmit.bind(this); 
+        this.onSubmit = this.onSubmit.bind(this); 
     }
 
     handleNameChange(event) {
@@ -35,8 +35,9 @@ class BookingForm extends Component {
       this.setState({table: event.target.value})
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    onSubmit(event) {
+        event.preventDefault(event);
+        this.props.handleSubmit();
         const name = this.state.name.trim(); 
         const date = this.state.date.trim();
         const time = this.state.time.trim();
@@ -49,7 +50,7 @@ class BookingForm extends Component {
     }
   render() {
     return(
-      <form className="booking-form" onSubmit={this.handleSubmit}>
+      <form className="booking-form" onSubmit={this.onSubmit}>
         <input
           type="text"
           placeholder="Customer Name"
