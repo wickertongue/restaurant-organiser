@@ -7,8 +7,8 @@ class TableLayout extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      inputValue: '',
-      backgroundcolor: ''
+      // inputValue: '',
+      // backgroundcolor: ''
     }
   }
   onChange(inputEntry) {
