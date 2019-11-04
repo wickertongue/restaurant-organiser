@@ -1,6 +1,7 @@
 package com.codeclan.example.restaurantspring.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import javax.persistence.Table;
@@ -22,24 +23,19 @@ public class Customer {
 
     @JsonIgnoreProperties(value = "customer")
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    @Cascade({org.hibernate.annotations.CascadeType.DELETE, org.hibernate.annotations.CascadeType.SAVE_UPDATE})
     private List<Booking> bookings;
 
     // Constructors
 
     public Customer(String name) {
         this.name = name;
-        this.bookings = new ArrayList<>();
     }
 
     public Customer() {
     }
 
     // Getters & Setters
-
-
-    public void setBookings(List<Booking> bookings) {
-        this.bookings = bookings;
-    }
 
     public List<Booking> getBookings() {
         return bookings;

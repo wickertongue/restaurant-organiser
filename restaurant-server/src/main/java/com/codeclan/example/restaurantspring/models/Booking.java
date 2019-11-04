@@ -65,7 +65,7 @@ public class Booking {
         this.tables.add(table);
     }
 
-// Getters and Setters
+    // Getters and Setters
 
     public void setTables(List<DinnerTable> tables) {
         this.tables = tables;
@@ -113,10 +113,6 @@ public class Booking {
 
     public List<DinnerTable> getTables() {
         return tables;
-    }
-
-    public void setTables(ArrayList<DinnerTable> tables) {
-        this.tables = tables;
     }
 
     public int getPartySize() {
