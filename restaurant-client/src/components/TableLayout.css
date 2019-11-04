@@ -3,7 +3,7 @@
     grid-template-columns: repeat(3,1fr);
     align-items: end;
     grid-auto-rows: 400px;
-    border-width: 100px;
+    border-width: 100%;
     background-color: rgb(216, 213, 218);
 
   }
@@ -98,3 +98,23 @@
     margin: 4px 2px;
     cursor: pointer;
   }
+
+  #question_text_1 {
+    background-color: #FF0000;
+    padding: 7px;
+    margin: 7px;
+  }
+  .blue {
+    background-color: #00f !important;
+  }
+
+.boxContent {
+
+  width:200px;
+  height: 200px;
+  border: 10px solid green;
+}
+  .isChecked {
+  color: blue;
+  border:2px solid blue;
+}
