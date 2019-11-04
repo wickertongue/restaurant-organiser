@@ -11,11 +11,7 @@ class BookingList extends Component {
     });
 
     return (
-      <div className="booking">
-        <p>I'm a booking list</p>
-        <Booking />
-        {bookingNodes}
-      </div>
+      null
     )
   }
 }

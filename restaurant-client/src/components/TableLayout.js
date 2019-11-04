@@ -31,18 +31,18 @@ class TableLayout extends Component {
             <div className="wrapper">
 
                 <div className="table1" style={{backgroundColor: backgroundcolor}}>
-                <strong>Table 1</strong>{bookingNodes}<input
+                <span className = "tableHead">Table 1</span>{bookingNodes}<input
                   value={this.state.inputValue}
                   onChange={(evt) => this.onChange(evt.target.value)}
                  /></div>
 
-                <div className="table2"><strong>Table 2</strong>{bookingNodes}</div>
+                <div className="table2"><span className = "tableHead">Table 2</span>{bookingNodes}</div>
 
-                <div className="table3"><strong>Table 3</strong>{bookingNodes}</div>
+                <div className="table3"><span className = "tableHead">Table 3</span>{bookingNodes}</div>
 
-                <div className="table4"><strong>Table 4</strong>{bookingNodes}</div>
+                <div className="table4"><span className = "tableHead">Table 4</span>{bookingNodes}</div>
 
-                <div className="table5"><strong>Table 5</strong>{bookingNodes}</div>
+                <div className="table5"><span className = "tableHead">Table 5</span>{bookingNodes}</div>
             </div>
              )
         }

@@ -16,7 +16,8 @@
       margin-left: 75px ;
       margin-top: 30px;
       margin-bottom: 40px;
-      padding: 80px
+      padding: 80px;
+      text-align: center;
   }
   .table2 {
     background-color: rgb(78, 202, 78);
@@ -26,7 +27,8 @@
       margin-right: 100px;
       margin-bottom: 100px;
       margin-left: 50px;
-      padding: 40px
+      padding: 40px;
+      text-align: center;
   }
   .table3 {
     background-color: rgb(78, 202, 78);
@@ -35,6 +37,7 @@
       margin-right: 100px;
       margin-top: 30px;
       padding: 80px;
+      text-align: center;
 
   }
   .table4 {
@@ -46,6 +49,7 @@
       margin-top: 30px;
       margin-bottom: 40px;
       padding: 80px;
+      text-align: center;
   }
   .table5 {
     background-color: rgb(78, 202, 78);
@@ -61,6 +65,36 @@
     margin-left: 50px;
     align-self: stretch;
     padding: 75px;
+    text-align: center;
+  }
+
+  .tableHead {
+    font-size: 150%;
+    font-weight: bold;
+  }
+
+  .subHead {
+
+    font-size:100;
+    font-weight: normal;
+  }
 
 
+    button, input, select, textarea {
+      font-family : inherit;
+      font-size   : 100%;
+      width : 175px;
+      margin: 0;
+      box-sizing: border-box;
+      margin:5px;
+    }
+
+    input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
   }
