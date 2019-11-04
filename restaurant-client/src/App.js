@@ -13,7 +13,9 @@ async componentDidMount() {
 
   const data = await response.json();
 
-  this.setState({ customers: data, isLoading: false });
+  this.setState({ 
+    customers: data["_embedded"].customers,  
+  isLoading: false });
 }
 
   render () {
@@ -27,9 +29,8 @@ async componentDidMount() {
         <div>
         <h1>Customers Data in App.js</h1>
         <p>
-         {this.state.customers["_embedded"].customers[1].name}</p>
+          {this.state.customers[1].name}</p>
 
-        <Customers customerData={customers} />
 
         </div>
     )
