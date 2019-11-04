@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import BookingList from "../components/BookingList";
 import BookingForm from "../components/BookingForm";
+import TableLayout from "../components/TableLayout";
 
 class RestaurantBox extends Component {
 
@@ -51,8 +52,9 @@ class RestaurantBox extends Component {
     return (
       <div className="booking-list">
         <h2>This is the RestaurantBox</h2>
-        <BookingForm />
+        <TableLayout/>
         <BookingList data={this.state.bookings}/>
+        <BookingForm />
       </div>
     );
   }
