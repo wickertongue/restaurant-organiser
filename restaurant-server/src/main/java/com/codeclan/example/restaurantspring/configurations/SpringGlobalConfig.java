@@ -1,5 +1,8 @@
 package com.codeclan.example.restaurantspring.configurations;
 
+import com.codeclan.example.restaurantspring.models.Booking;
+import com.codeclan.example.restaurantspring.models.Customer;
+import com.codeclan.example.restaurantspring.models.DinnerTable;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -22,6 +25,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
                     .allowedOrigins(ALLOWED_ORIGINS)
                     .allowedHeaders(ALLOWED_HEADERS)
                     .allowedMethods(ALLOWED_METHODS);
+            config.exposeIdsFor(Booking.class, DinnerTable.class, Customer.class);
+
+
         }
 
         @Override
@@ -31,4 +37,5 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
                     .allowedHeaders(ALLOWED_HEADERS)
                     .allowedMethods(ALLOWED_METHODS);
         }
+
     }
