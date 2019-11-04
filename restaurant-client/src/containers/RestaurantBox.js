@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-// import BookingList from "../components/BookingList";
-// import BookingForm from "../components/BookingForm";
+import BookingList from "../components/BookingList";
+import BookingForm from "../components/BookingForm";
 
 class RestaurantBox extends Component {
 
@@ -8,34 +8,41 @@ class RestaurantBox extends Component {
     super(props);
     this.state = {
       customers: [],
-      isLoading: true,
-      bookings: []
+      tables: [],
+      bookings: [],
+      isLoading: true
     }
   }
 
   async componentDidMount() {
+
+    // customer fetch
     const customersFetch = await fetch("http://localhost:8080/customers")
     const customers = await customersFetch.json();
-
     this.setState({
       customers: customers["_embedded"].customers,
     });
 
+    // booking fetch
     const bookingFetch = await fetch("http://localhost:8080/bookings")
     const bookings = await bookingFetch.json();
-
     this.setState({
       bookings: bookings["_embedded"].bookings,
     });
 
-
+    // table fetch
+    const tableFetch = await fetch("http://localhost:8080/dinnerTables")
+    const tables = await tableFetch.json();
+    this.setState({
+      tables: tables["_embedded"].dinnerTables,
+    });
 
     this.setState({ isLoading: false})
   }
 
 
   render() {
-    const { customers, bookings, isLoading } = this.state;
+    const { isLoading } = this.state;
 
     if (isLoading) {
       return <p>Loading...</p>;
@@ -44,10 +51,8 @@ class RestaurantBox extends Component {
     return (
       <div className="booking-list">
         <h2>This is the RestaurantBox</h2>
-        <p> {this.state.customers[0].name} </p>
-        <p> {this.state.bookings[0].time} </p>
-        {/* <BookingForm />
-        <BookingList data={this.state.data}/> */}
+        <BookingForm />
+        <BookingList data={this.state.bookings}/>
       </div>
     );
   }
