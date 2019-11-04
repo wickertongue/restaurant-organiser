@@ -52,7 +52,7 @@ public class DataLoader implements ApplicationRunner {
 
         // Bookings
 
-        Booking booking1 = new Booking("18:00", "01/11/2019", 2, customer1);
+        Booking booking1 = new Booking("18:00", "findme", 2, customer1);
         bookingRepository.save(booking1);
 
         booking1.addTable(table1);
