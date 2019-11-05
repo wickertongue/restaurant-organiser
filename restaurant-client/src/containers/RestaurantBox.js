@@ -46,11 +46,10 @@ class RestaurantBox extends Component {
   }
 
     handleSubmit(formData) {
+      console.log(formData.table)
       const customerData = null;
       const bookingData = null;
       console.log(formData)
-      // console.log(formData.refs)
-      // console.log(this.refs.name)
 
       fetch("http://localhost:8080/customers", {
         method: 'POST',
@@ -73,17 +72,14 @@ class RestaurantBox extends Component {
               partySize: formData.partySize,
               duration: 120,
               customer: 'http://localhost:8080/customers/' + customer.id,
+              table: 'http://localhost:8080/tables/' + formData.table
             })
-
-            // fetch
           })
             .then(res => res.json())
             .then(booking => {
               console.log('booking', booking)
             })
-            // catch
         })
-        // catch
     };
 
 
