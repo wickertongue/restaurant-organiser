@@ -25,8 +25,7 @@ public class DinnerTable {
     private List<Booking> bookings;
 
     // Constructors
-
-
+    
     public DinnerTable(int capacity) {
         this.capacity = capacity;
         this.bookings = new ArrayList<Booking>();
