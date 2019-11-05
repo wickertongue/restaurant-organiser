@@ -43,10 +43,37 @@ class RestaurantBox extends Component {
     this.setState({ isLoading: false})
   }
 
-    handleSubmit() {
-      console.log("You managed to use handleSubmit, well done!")
-    }
+    handleSubmit(formData) {
+      const customerData = null;
+      const bookingData = null;
+      console.log(formData)
+      // console.log(formData.refs)
+      // console.log(this.refs.name)
 
+      fetch("http://localhost:8080/customers", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      }) 
+        .then(res => res.json())
+        .then(customer => {
+          console.log('customer', customer)
+          // post a booking with customer id = returned id
+        })
+        // .then(response => response.json())
+        // .catch((err) => {
+        //   console.error(err);
+        //   res.status(500);
+        //   res.json({ status: 500, error: err });
+        // })
+    };
+
+      // post to bookings
+      // before we can make a booking, we must first make a customer
+      // from formData we need pull the name, make the customer, and then make the booking.
+      // JSON.stringify
 
   render() {
     const { isLoading } = this.state;
