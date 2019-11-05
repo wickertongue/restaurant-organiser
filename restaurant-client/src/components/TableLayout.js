@@ -16,39 +16,58 @@ class TableLayout extends Component {
   }
 
   boxClick = (e) => {
-    if(this.setState({bgColor: '#4eca4e'}))
+    if(this.state.bgColor === '#4eca4e')
       {
       this.setState({bgColor: 'red'})
       }
     else
       {
-      this.setState({bgColor: 'yellow'})
+      this.setState({bgColor: '#4eca4e'})
       }
     }
 
-
     boxClick2 = (e) => {
-        this.setState({
-          bgColor2: "red",
-        })
+      if(this.state.bgColor2 === '#4eca4e')
+        {
+        this.setState({bgColor2: 'red'})
+        }
+      else
+        {
+        this.setState({bgColor2: '#4eca4e'})
+        }
       }
 
       boxClick3 = (e) => {
-          this.setState({
-            bgColor3: "red",
-          })
+        if(this.state.bgColor3 === '#4eca4e')
+          {
+          this.setState({bgColor3: 'red'})
+          }
+        else
+          {
+          this.setState({bgColor3: '#4eca4e'})
+          }
         }
 
         boxClick4 = (e) => {
-            this.setState({
-              bgColor4: "red",
-            })
+          if(this.state.bgColor4 === '#4eca4e')
+            {
+            this.setState({bgColor4: 'red'})
+            }
+          else
+            {
+            this.setState({bgColor4: '#4eca4e'})
+            }
           }
 
           boxClick5 = (e) => {
-              this.setState({
-                bgColor5: "red",
-              })
+            if(this.state.bgColor5 === '#4eca4e')
+              {
+              this.setState({bgColor5: 'red'})
+              }
+            else
+              {
+              this.setState({bgColor5: '#4eca4e'})
+              }
             }
 
 
@@ -56,13 +75,17 @@ class TableLayout extends Component {
 
         const bookingNodes = this.props.data.map(booking => {
             return (
-              <Booking key={booking.id} duration={booking.duration} date={booking.date} time={booking.time} partySize={booking.partySize} tableId={booking.tableId}></Booking>
+              <Booking
+              key={booking.id}
+              duration={booking.duration}
+              date={booking.date} time={booking.time}
+              partySize={booking.partySize}
+              tableId={booking.tableId}>
+              </Booking>
             );
           });
 
         return (
-
-
             <div className="wrapper">
 
          <div className="table1"

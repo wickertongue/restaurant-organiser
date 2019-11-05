@@ -13,7 +13,7 @@ class BookingForm extends Component {
           placeholder="Date"
         />
         <input
-          type="text"
+          type="time"
           placeholder="Time"
         />
         <input
