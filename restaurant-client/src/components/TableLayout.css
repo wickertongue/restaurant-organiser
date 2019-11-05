@@ -2,9 +2,9 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     align-items: end;
-    grid-auto-rows: 250px;
-    grid-column: 10% ;
-    border-width: 75%;
+    grid-auto-rows: 210px;
+    grid-auto-columns: 25%;
+    width: 80%;
     background-color: #EDF5E1 ;
 
 
@@ -13,12 +13,12 @@
       background-color: rgb(216, 213, 218);
       border: 1px solid black;
       align-self: stretch;
-      padding: 100px;
+      padding: px;
       margin-right: 100px;
-      margin-left: 75px ;
+      margin-left: 50px ;
       margin-top: 30px;
-      margin-bottom: 40px;
-      border-radius: 25px;
+      margin-bottom: 50px;
+      border-radius: 10px;
       /* padding: 80px */
   }
   .table2 {
@@ -26,22 +26,28 @@
       border: 1px solid black;
       align-self: stretch;
       margin-top: 30px;
-      margin-right: 100px;
-      margin-bottom: 100px;
-      margin-left: 50px;
-      padding: 40px;
+      margin-right: 0px;
+      margin-bottom: 50px;
+      margin-left: 0px;
+      padding: px;
       text-align: center;
-      border-radius: 25px;
+      border-radius: 10px;
   }
   .table3 {
     background-color: rgb(216, 213, 218);
       border: 1px solid black;
       align-self: stretch;
-      margin-right: 100px;
+      margin-right: 50px;
       margin-top: 30px;
-      padding: 80px;
+      margin-left: 75px;
+      margin-bottom: 50px;
+      grid-column-start: 3;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      padding: px;
       text-align: center;
-      border-radius: 25px;
+      border-radius: 10px;
 
   }
   .table4 {
@@ -49,29 +55,28 @@
     border: 1px solid black;
     align-self: stretch;
     margin-right: 100px;
-      margin-left: 100px ;
+      margin-left: 50px ;
       margin-top: 30px;
-      margin-bottom: 40px;
-      padding: 80px;
+      margin-bottom: 50px;
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 2;
+      grid-row-end: 2;
+      padding: px;
       text-align: center;
-      border-radius: 25px;
+      border-radius: 10px;
   }
   .table5 {
     background-color: rgb(216, 213, 218));
     border: 1px solid black;
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    position: relative;
-    margin-right: 100px;
-    margin-bottom: 75px;
+    margin-right: px;
+    margin-bottom: 50px;
     margin-top: 30px;
-    margin-left: 50px;
+    margin-left: px;
     align-self: stretch;
-    padding: 75px;
+    padding: px;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 10px;
   }
 
   .tableHead {
@@ -81,7 +86,7 @@
 
   .subHead {
 
-    font-size:100;
+    font-size:10;
     font-weight: normal;
   }
 
