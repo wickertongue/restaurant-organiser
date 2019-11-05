@@ -96,7 +96,11 @@ class RestaurantBox extends Component {
           <SideBar /> 
         </div>
         <div className="right">
-          <TableLayout data={this.state.bookings}/>
+          <TableLayout 
+          data={this.state.bookings}
+          tableData={this.state.tables}
+          
+          />
         </div>
       </div>
     );
