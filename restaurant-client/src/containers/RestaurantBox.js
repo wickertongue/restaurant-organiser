@@ -59,15 +59,27 @@ class RestaurantBox extends Component {
       }) 
         .then(res => res.json())
         .then(customer => {
-          console.log('customer', customer)
-          // post a booking with customer id = returned id
+
+          fetch("http://localhost:8080/bookings", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              time: formData.time,
+              date: formData.date,
+              partySize: formData.partySize,
+              duration: 120,
+              customer: 'http://localhost:8080/customers/' + customer.id
+            })
+          })
+            .then(res => res.json())
+            .then(booking => {
+              console.log('booking', booking)
+            })
+            // catch
         })
-        // .then(response => response.json())
-        // .catch((err) => {
-        //   console.error(err);
-        //   res.status(500);
-        //   res.json({ status: 500, error: err });
-        // })
+        // catch
     };
 
       // post to bookings
