@@ -32,49 +32,36 @@ public class Booking {
     private int duration;
 
     @JsonIgnoreProperties(value = "bookings")
-    @ManyToMany
-    @JoinTable(
-            name = "dinnertables_bookings",
-            joinColumns = { @JoinColumn(
-                    name = "booking_id",
-                    nullable = false,
-                    updatable = false)
-            },
-            inverseJoinColumns = { @JoinColumn(
-                    name = "dinnerTable_id",
-                    nullable = false,
-                    updatable = false)
-            })
-    @Cascade({org.hibernate.annotations.CascadeType.ALL})
-    private List<DinnerTable> tables;
+    @ManyToOne
+    @JoinColumn(name = "dinnerTable_id", nullable = false)
+    private DinnerTable table;
 
     @Column(name = "party_size")
     private int partySize;
 
     // Constructors
 
-    public Booking(String time, String date, int partySize, Customer customer) {
+    public Booking(String time, String date, int partySize, Customer customer, DinnerTable table) {
         this.time = time;
         this.date = date;
         this.customer = customer;
         this.duration = 120;
-        this.tables = new ArrayList<>();
+        this.table = table;
         this.partySize = partySize;
     }
 
     public Booking() {
     }
 
-    // Misc Methods
-
-    public void addTable(DinnerTable table) {
-        this.tables.add(table);
-    }
-
     // Getters and Setters
 
-    public void setTables(List<DinnerTable> tables) {
-        this.tables = tables;
+
+    public DinnerTable getTable() {
+        return table;
+    }
+
+    public void setTables(DinnerTable table) {
+        this.table = table;
     }
 
     public Long getId() {
@@ -115,10 +102,6 @@ public class Booking {
 
     public void setDuration(int duration) {
         this.duration = duration;
-    }
-
-    public List<DinnerTable> getTables() {
-        return tables;
     }
 
     public int getPartySize() {

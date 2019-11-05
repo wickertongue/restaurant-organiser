@@ -52,29 +52,17 @@ public class DataLoader implements ApplicationRunner {
 
         // Bookings
 
-        Booking booking1 = new Booking("18:00", "findme", 2, customer1);
+        Booking booking1 = new Booking("18:00", "findme", 2, customer1, table1);
         bookingRepository.save(booking1);
 
-        booking1.addTable(table1);
-        bookingRepository.save(booking1);
-
-        Booking booking2 = new Booking("21:00", "15/05/2015", 6, customer2);
+        Booking booking2 = new Booking("21:00", "15/05/2015", 6, customer2, table2);
         bookingRepository.save(booking2);
+//
+//        Booking booking3 = new Booking("13:00", "03/09/2017", 3, customer2, table2);
+//        bookingRepository.save(booking3);
+//
+//        Booking booking4 = new Booking("09:00", "01/12/2012", 9, customer2, table3);
+//        bookingRepository.save(booking4);
 
-        booking2.addTable(table2);
-        bookingRepository.save(booking2);
-
-        Booking booking3 = new Booking("13:00", "03/09/2017", 3, customer2);
-        bookingRepository.save(booking3);
-
-        booking3.addTable(table2);
-        bookingRepository.save(booking3);
-
-
-        Booking booking4 = new Booking("09:00", "01/12/2012", 9, customer2);
-        bookingRepository.save(booking4);
-
-        booking4.addTable(table4);
-        bookingRepository.save(booking4);
     }
 }

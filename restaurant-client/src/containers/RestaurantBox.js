@@ -70,8 +70,10 @@ class RestaurantBox extends Component {
               date: formData.date,
               partySize: formData.partySize,
               duration: 120,
-              customer: 'http://localhost:8080/customers/' + customer.id
+              customer: 'http://localhost:8080/customers/' + customer.id,
             })
+
+            // fetch
           })
             .then(res => res.json())
             .then(booking => {
@@ -82,10 +84,6 @@ class RestaurantBox extends Component {
         // catch
     };
 
-      // post to bookings
-      // before we can make a booking, we must first make a customer
-      // from formData we need pull the name, make the customer, and then make the booking.
-      // JSON.stringify
 
   render() {
     const { isLoading } = this.state;

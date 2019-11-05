@@ -1,6 +1,7 @@
 package com.codeclan.example.restaurantspring.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -19,27 +20,16 @@ public class DinnerTable {
     @Column(name = "capacity")
     private int capacity;
 
-    @JsonIgnoreProperties(value = "dinnerTable")
-    @ManyToMany
-    @JoinTable(
-            name = "dinnertables_bookings",
-            joinColumns = { @JoinColumn(
-                    name = "dinnerTable_id",
-                    nullable = false,
-                    updatable = false)
-            },
-            inverseJoinColumns = { @JoinColumn(
-                    name = "booking_id",
-                    nullable = false,
-                    updatable = false)
-            })
+    @JsonIgnoreProperties(value = "table")
+    @OneToMany(mappedBy = "table", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
     // Constructors
 
+
     public DinnerTable(int capacity) {
         this.capacity = capacity;
-        this.bookings = new ArrayList<>();
+        this.bookings = new ArrayList<Booking>();
     }
 
     public DinnerTable() {
