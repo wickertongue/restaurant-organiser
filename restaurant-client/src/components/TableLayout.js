@@ -7,66 +7,66 @@ class TableLayout extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      bgColor: '#4eca4e',
-      bgColor2: '#4eca4e',
-      bgColor3: '#4eca4e',
-      bgColor4: '#4eca4e',
-      bgColor5: '#4eca4e'
+      bgColor: '#8EE4AF',
+      bgColor2: '#8EE4AF',
+      bgColor3: '#8EE4AF',
+      bgColor4: '#8EE4AF',
+      bgColor5: '#8EE4AF'
     }
   }
 
   boxClick = (e) => {
-    if(this.state.bgColor === '#4eca4e')
+    if(this.state.bgColor === '#8EE4AF')
       {
-      this.setState({bgColor: 'red'})
+      this.setState({bgColor: '#FC4445'})
       }
     else
       {
-      this.setState({bgColor: '#4eca4e'})
+      this.setState({bgColor: '#8EE4AF'})
       }
     }
 
     boxClick2 = (e) => {
-      if(this.state.bgColor2 === '#4eca4e')
+      if(this.state.bgColor2 === '#8EE4AF')
         {
-        this.setState({bgColor2: 'red'})
+        this.setState({bgColor2: '#FC4445'})
         }
       else
         {
-        this.setState({bgColor2: '#4eca4e'})
+        this.setState({bgColor2: '#8EE4AF'})
         }
       }
 
       boxClick3 = (e) => {
-        if(this.state.bgColor3 === '#4eca4e')
+        if(this.state.bgColor3 === '#8EE4AF')
           {
-          this.setState({bgColor3: 'red'})
+          this.setState({bgColor3: '#FC4445'})
           }
         else
           {
-          this.setState({bgColor3: '#4eca4e'})
+          this.setState({bgColor3: '#8EE4AF'})
           }
         }
 
         boxClick4 = (e) => {
-          if(this.state.bgColor4 === '#4eca4e')
+          if(this.state.bgColor4 === '#8EE4AF')
             {
-            this.setState({bgColor4: 'red'})
+            this.setState({bgColor4: '#FC4445'})
             }
           else
             {
-            this.setState({bgColor4: '#4eca4e'})
+            this.setState({bgColor4: '#8EE4AF'})
             }
           }
 
           boxClick5 = (e) => {
-            if(this.state.bgColor5 === '#4eca4e')
+            if(this.state.bgColor5 === '#8EE4AF')
               {
-              this.setState({bgColor5: 'red'})
+              this.setState({bgColor5: '#FC4445'})
               }
             else
               {
-              this.setState({bgColor5: '#4eca4e'})
+              this.setState({bgColor5: '#8EE4AF'})
               }
             }
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './BookingForm.css';
 
 class BookingForm extends Component {
     constructor(props) {
@@ -76,12 +77,15 @@ class BookingForm extends Component {
           value={this.state.partySize}
           onChange={this.handlePartySizeChange}
         />
-        <input
-          type="text"
-          placeholder="Table"
-          value={this.state.table}
-          onChange={this.handleTableChange}
-        />
+          <select onChange={this.handleTableChange}>
+          <option value={this.state.table}>1</option>
+          <option value={this.state.table}>2</option>
+          <option value={this.state.table}>3</option>
+          <option value={this.state.table}>4</option>
+          <option value={this.state.table}>5</option>
+          <option value={this.state.table}>6</option>
+          </select>
+
         <input type="submit" value="Make Booking" />
       </form>
     )

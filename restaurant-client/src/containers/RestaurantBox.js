@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import BookingList from "../components/BookingList";
-import BookingForm from "../components/BookingForm";
 import TableLayout from "../components/TableLayout";
 import ColorChange from "../components/ColorChange";
 import SideBar from "../components/SideBar";
@@ -59,13 +58,12 @@ class RestaurantBox extends Component {
 
     return (
       <div className="booking-list">
-        <h1>Welcome to the Cohort<br /><span className ="subHead">Fine Dining in Edinburgh</span></h1>
+        <h1>Welcome to The Cohort<br /><span className ="subHead">Fine Dining in Edinburgh</span></h1>
         <div className="left" >
           <SideBar /> 
         </div>
         <div className="right">
           <TableLayout data={this.state.bookings}/>
-          <BookingForm handleSubmit={this.handleSubmit} />
         </div>
       </div>
     );

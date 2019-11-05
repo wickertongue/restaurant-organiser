@@ -2,27 +2,28 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     align-items: end;
-    grid-auto-rows: 400px;
-    grid-auto-columns: 100%;
-    border-width: 100%;
-    background-color: rgb(216, 213, 218);
+    grid-auto-rows: 250px;
+    grid-column: 10% ;
+    border-width: 75%;
+    background-color: #EDF5E1 ;
 
 
   }
   .table1 {
-      background-color: rgb(78, 202, 78);
-      border: 2px solid black;
+      background-color: rgb(216, 213, 218);
+      border: 1px solid black;
       align-self: stretch;
-      padding: 75px;
-      margin-right: 75px;
+      padding: 100px;
+      margin-right: 100px;
       margin-left: 75px ;
       margin-top: 30px;
       margin-bottom: 40px;
+      border-radius: 25px;
       /* padding: 80px */
   }
   .table2 {
-    background-color: rgb(78, 202, 78);
-      border: 2px solid black;
+    background-color: rgb(216, 213, 218);
+      border: 1px solid black;
       align-self: stretch;
       margin-top: 30px;
       margin-right: 100px;
@@ -30,31 +31,34 @@
       margin-left: 50px;
       padding: 40px;
       text-align: center;
+      border-radius: 25px;
   }
   .table3 {
-    background-color: rgb(78, 202, 78);
-      border: 2px solid black;
+    background-color: rgb(216, 213, 218);
+      border: 1px solid black;
       align-self: stretch;
       margin-right: 100px;
       margin-top: 30px;
       padding: 80px;
       text-align: center;
+      border-radius: 25px;
 
   }
   .table4 {
-    background-color: rgb(78, 202, 78);
-    border: 2px solid black;
+    background-color: rgb(216, 213, 218);
+    border: 1px solid black;
     align-self: stretch;
-    margin-right: 75px;
-      margin-left: 75px ;
+    margin-right: 100px;
+      margin-left: 100px ;
       margin-top: 30px;
       margin-bottom: 40px;
       padding: 80px;
       text-align: center;
+      border-radius: 25px;
   }
   .table5 {
-    background-color: rgb(78, 202, 78);
-    border: 2px solid black;
+    background-color: rgb(216, 213, 218));
+    border: 1px solid black;
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 2;
@@ -67,10 +71,11 @@
     align-self: stretch;
     padding: 75px;
     text-align: center;
+    border-radius: 25px;
   }
 
   .tableHead {
-    font-size: 150%;
+    font-size: 100%;
     font-weight: bold;
   }
 
