@@ -12,7 +12,7 @@ class SideBar extends Component {
                     <Calendar />
                 </div>
                 <div>
-                    <BookingForm handleSubmit={this.handleSubmit} />
+                    <BookingForm handleSubmit={this.props.handleSubmit} />
                 </div>
                 <div className='CustomerList'>
                     <CustomerList />

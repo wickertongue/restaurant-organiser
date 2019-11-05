@@ -95,7 +95,9 @@ class RestaurantBox extends Component {
           <span className ="subHead">Fine Dining in Edinburgh</span>
         </h1>
         <div className="left" >
-          <SideBar /> 
+          <SideBar 
+            tableData={this.state.data}
+            handleSubmit={this.handleSubmit} /> 
         </div>
         <div className="right">
           <TableLayout 

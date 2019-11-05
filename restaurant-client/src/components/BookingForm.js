@@ -9,7 +9,7 @@ class BookingForm extends Component {
       date: '',
       time: '',
       partySize: '',
-      table: ''
+      table: null
     }
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
@@ -33,10 +33,12 @@ class BookingForm extends Component {
     this.setState({ partySize: event.target.value })
   }
   handleTableChange(event) {
+    console.log(event)
     this.setState({ table: event.target.value })
   }
 
   onSubmit(event) {
+    console.log(event)
     event.preventDefault(event);
     const name = this.state.name.trim();
     const date = this.state.date.trim();
@@ -58,7 +60,6 @@ class BookingForm extends Component {
           placeholder="Customer Name"
           value={this.state.name}
           onChange={this.handleNameChange}
-
         />
         <input
           type="date"

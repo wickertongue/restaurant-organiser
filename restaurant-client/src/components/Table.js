@@ -40,6 +40,13 @@ class Table extends Component {
         <p>Table {this.props.tableData.id}</p>
         {this.showBookingIfExists()}
       </div>
+
+      // {/* <div className="wrapper">
+      //   {this.props.tableData["_embedded"].bookings.map(booking => 
+      //     <p>Hello!</p>)
+      //   }
+      // </div> */}
+
     )
   }
 }
