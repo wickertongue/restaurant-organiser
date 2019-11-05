@@ -3,8 +3,10 @@
     grid-template-columns: repeat(3,1fr);
     align-items: end;
     grid-auto-rows: 400px;
+    grid-auto-columns: 100%;
     border-width: 100%;
     background-color: rgb(216, 213, 218);
+
 
   }
   .table1 {
