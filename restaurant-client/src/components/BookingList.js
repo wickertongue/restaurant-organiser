@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Booking from "./Booking";
 
 class BookingList extends Component {

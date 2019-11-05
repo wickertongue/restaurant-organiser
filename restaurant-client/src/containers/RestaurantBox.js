@@ -91,7 +91,9 @@ class RestaurantBox extends Component {
 
     return (
       <div className="booking-list">
-        <h1>Welcome to The Cohort<br /><span className ="subHead">Fine Dining in Edinburgh</span></h1>
+        <h1>Welcome to The Cohort<br />
+          <span className ="subHead">Fine Dining in Edinburgh</span>
+        </h1>
         <div className="left" >
           <SideBar /> 
         </div>
