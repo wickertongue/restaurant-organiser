@@ -1,5 +1,8 @@
 package com.codeclan.example.restaurantspring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +23,7 @@ public class Booking {
     @Column(name = "date")
     private String date;
 
+    @JsonIgnoreProperties(value = "bookings")
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
@@ -27,6 +31,7 @@ public class Booking {
     @Column(name = "duration")
     private int duration;
 
+    @JsonIgnoreProperties(value = "bookings")
     @ManyToMany
     @JoinTable(
             name = "dinnertables_bookings",
@@ -40,6 +45,7 @@ public class Booking {
                     nullable = false,
                     updatable = false)
             })
+    @Cascade({org.hibernate.annotations.CascadeType.ALL})
     private List<DinnerTable> tables;
 
     @Column(name = "party_size")

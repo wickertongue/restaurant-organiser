@@ -1,5 +1,7 @@
 package com.codeclan.example.restaurantspring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,7 @@ public class DinnerTable {
     @Column(name = "capacity")
     private int capacity;
 
+    @JsonIgnoreProperties(value = "dinnerTable")
     @ManyToMany
     @JoinTable(
             name = "dinnertables_bookings",

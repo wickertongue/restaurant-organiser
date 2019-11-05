@@ -14,6 +14,7 @@ class RestaurantBox extends Component {
       bookings: [],
       isLoading: true
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   async componentDidMount() {
@@ -42,6 +43,10 @@ class RestaurantBox extends Component {
     this.setState({ isLoading: false})
   }
 
+    handleSubmit() {
+      console.log("You managed to use handleSubmit, well done!")
+    }
+
 
   render() {
     const { isLoading } = this.state;
@@ -54,8 +59,9 @@ class RestaurantBox extends Component {
       <div className="booking-list">
         <h1>Welcome to the Cohort<br /><span className ="subHead">Fine Dining in Edinburgh</span></h1>
         <TableLayout data={this.state.bookings}/>
-        <BookingList data={this.state.bookings}/>
-        <BookingForm />
+        {/* <BookingList data={this.state.bookings}/> */}
+        <BookingForm
+        handleSubmit={this.handleSubmit} />
       </div>
     );
   }

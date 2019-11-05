@@ -26,8 +26,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
                     .allowedHeaders(ALLOWED_HEADERS)
                     .allowedMethods(ALLOWED_METHODS);
             config.exposeIdsFor(Booking.class, DinnerTable.class, Customer.class);
-
-
         }
 
         @Override
