@@ -44,9 +44,42 @@ class RestaurantBox extends Component {
     this.setState({ isLoading: false})
   }
 
-    handleSubmit() {
-      console.log("You managed to use handleSubmit, well done!")
-    }
+    handleSubmit(formData) {
+      console.log(formData.table)
+      const customerData = null;
+      const bookingData = null;
+      console.log(formData)
+
+      fetch("http://localhost:8080/customers", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      }) 
+        .then(res => res.json())
+        .then(customer => {
+
+          fetch("http://localhost:8080/bookings", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              time: formData.time,
+              date: formData.date,
+              partySize: formData.partySize,
+              duration: 120,
+              customer: 'http://localhost:8080/customers/' + customer.id,
+              table: 'http://localhost:8080/tables/' + formData.table
+            })
+          })
+            .then(res => res.json())
+            .then(booking => {
+              console.log('booking', booking)
+            })
+        })
+    };
 
 
   render() {

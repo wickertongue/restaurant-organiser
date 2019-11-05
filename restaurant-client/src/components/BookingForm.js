@@ -38,7 +38,6 @@ class BookingForm extends Component {
 
     onSubmit(event) {
         event.preventDefault(event);
-        this.props.handleSubmit();
         const name = this.state.name.trim(); 
         const date = this.state.date.trim();
         const time = this.state.time.trim();
@@ -47,8 +46,10 @@ class BookingForm extends Component {
         if (!name || !date || !time || !partySize || !table ) {
           return
         }
+        this.props.handleSubmit({ name: name, date: date, time: time, partySize: partySize, table: table });
         this.setState({name:'', date: '', time: '', partySize: '', table: ''});
     }
+    
   render() {
     return(
       <form className="booking-form" onSubmit={this.onSubmit}>
