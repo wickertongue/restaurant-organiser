@@ -15,12 +15,11 @@ class TableLayout extends Component {
     }
   }
 
-
-
   boxClick = (e) => {
-      this.setState({
-        bgColor: "red",
-      })
+    if(({bgColor: '#4eca4e'}))
+      this.setState({bgColor: 'red'});
+    else
+      this.setState({bgColor: '#4eca4e'})
     }
 
 
