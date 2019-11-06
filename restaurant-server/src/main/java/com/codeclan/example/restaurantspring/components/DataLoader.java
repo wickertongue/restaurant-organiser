@@ -50,6 +50,12 @@ public class DataLoader implements ApplicationRunner {
         DinnerTable table4 = new DinnerTable(10);
         dinnerTableRepository.save(table4);
 
+        DinnerTable table5 = new DinnerTable(4);
+        dinnerTableRepository.save(table5);
+
+        DinnerTable table6 = new DinnerTable(6);
+        dinnerTableRepository.save(table6);
+
         // Bookings
 
         Booking booking1 = new Booking("18:00", "2019-12-02", 2, customer1, table1);
