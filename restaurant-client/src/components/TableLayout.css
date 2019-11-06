@@ -19,6 +19,7 @@
       margin-top: 30px;
       margin-bottom: 50px;
       border-radius: 10px;
+      text-align: center;
       /* padding: 80px */
   }
   .table2 {
@@ -69,7 +70,7 @@
   .table5 {
     background-color: rgb(216, 213, 218));
     border: 1px solid black;
-    margin-right: px;
+    /* margin-right: px; */
     margin-bottom: 50px;
     margin-top: 30px;
     margin-left: px;
@@ -78,16 +79,6 @@
     text-align: center;
     border-radius: 10px;
   }
-
-    button, input, select, textarea {
-      font-family : inherit;
-      font-size   : 100%;
-      width : 175px;
-      margin: 0;
-      box-sizing: border-box;
-      margin:5px;
-    }
-
     input[type=button], input[type=submit], input[type=reset] {
     background-color: #4CAF50;
     border: none;
