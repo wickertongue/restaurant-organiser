@@ -21,8 +21,18 @@ h1 {
 
 .calendar {
     background-color: #05386B;
-    padding-left: 475px;
-    font-size: 24px;
+    padding-left: 450px;
+    font-size: 20px;
+}
+
+.calender input[type=date] {
+    width: 200%;
+    background-color: plum;
+}
+
+form {
+
+    width: 25%
 }
 
 img {
