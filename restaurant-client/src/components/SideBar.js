@@ -7,10 +7,7 @@ class SideBar extends Component {
     render () { 
         return (
             <div> 
-            <div className='calendar'> 
-                <p> I'm a calendar</p>
-                <Calendar /> 
-            </div>
+        
             <div> 
             <BookingForm handleSubmit={this.handleSubmit} />
             </div>

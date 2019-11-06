@@ -3,6 +3,7 @@ import BookingList from "../components/BookingList";
 import TableLayout from "../components/TableLayout";
 import ColorChange from "../components/ColorChange";
 import SideBar from "../components/SideBar";
+import Header from "../components/Header";
 import "./RestaurantBox.css"
 
 class RestaurantBox extends Component {
@@ -88,13 +89,15 @@ class RestaurantBox extends Component {
     if (isLoading) {
       return <p>Loading...</p>;
     }
-
     return (
-      <div className="booking-list">
-        <h1>Welcome to The Cohort<br /><span className ="subHead">Fine Dining in Edinburgh</span></h1>
-        <div className="left" >
+      <div>
+      <div className="Header">
+        <Header />
+      </div>
+      <div className="booking-list"></div>
+      <div className="left" >
           <SideBar /> 
-        </div>
+      </div>
         <div className="right">
           <TableLayout data={this.state.bookings}/>
         </div>

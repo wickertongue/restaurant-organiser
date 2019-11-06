@@ -79,20 +79,6 @@
     border-radius: 10px;
   }
 
-  .tableHead {
-    font-size: 100%;
-    font-weight: bold;
-    padding: 10px;
-  }
-
-  .subHead {
-
-    font-size: 75%;
-    font-weight: normal;
-    font-style: italic
-  }
-
-
     button, input, select, textarea {
       font-family : inherit;
       font-size   : 100%;
