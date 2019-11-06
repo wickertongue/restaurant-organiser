@@ -82,12 +82,14 @@
   .tableHead {
     font-size: 100%;
     font-weight: bold;
+    padding: 10px;
   }
 
   .subHead {
 
-    font-size:10;
+    font-size: 75%;
     font-weight: normal;
+    font-style: italic
   }
 
 
