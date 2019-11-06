@@ -8,13 +8,13 @@ class Table extends Component {
     }
   }
 
-  boxClick = () => {
-    if (this.state.bgColor === '#8EE4AF') {
-      this.setState({ bgColor: '#FC4445' })
-    } else {
-      this.setState({ bgColor: '#8EE4AF' })
-    }
-  }
+  // boxClick = () => {
+  //   if (this.props.tableData._embedded) {
+  //     return '#FC4445'
+  //   } else {
+  //     return '#8EE4AF'
+  //   }
+  // }
 
   showBookingsBySelectedDate() {
     if (!this.props.tableData._embedded) {
@@ -33,7 +33,7 @@ class Table extends Component {
     return (
       <div
         className="table"
-        style={{ backgroundColor: this.state.bgColor }}
+        style={{ backgroundColor: this.boxClick() }}
         onClick={this.boxClick}>
         <h3>Table {this.props.tableData.id}</h3>
 
