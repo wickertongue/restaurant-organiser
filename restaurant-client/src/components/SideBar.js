@@ -1,15 +1,15 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
 import Calendar from './Calendar';
-import CustomerList from './CustomerList'; 
+import CustomerList from './CustomerList';
 import BookingForm from "../components/BookingForm";
 
-class SideBar extends Component { 
-    render () { 
+class SideBar extends Component {
+    render() {
         return (
             <div> 
         
             <div> 
-            <BookingForm handleSubmit={this.handleSubmit} />
+            <BookingForm handleSubmit={this.props.handleSubmit} />
             </div>
             <div className='CustomerList'> 
                 <CustomerList /> 
@@ -18,5 +18,5 @@ class SideBar extends Component {
         );
     }
 }
-export default SideBar; 
+export default SideBar;
 

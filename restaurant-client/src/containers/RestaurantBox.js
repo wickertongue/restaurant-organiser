@@ -96,10 +96,16 @@ class RestaurantBox extends Component {
       </div>
       <div className="booking-list"></div>
       <div className="left" >
-          <SideBar /> 
+          <SideBar 
+              tableData={this.state.data}
+              handleSubmit={this.handleSubmit} />
       </div>
         <div className="right">
-          <TableLayout data={this.state.bookings}/>
+          <TableLayout 
+          data={this.state.bookings}
+          tableData={this.state.tables}
+          
+          />
         </div>
       </div>
     );
