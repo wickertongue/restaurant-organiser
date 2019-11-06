@@ -2,8 +2,9 @@
 .left {
     float: left;
     background-color: #8EE4AF;
-    height: 800px;
-    width: 20%
+    height: 420px;
+    width: 20%;
+    
 }
 h1 {
     background-color: #05386B;
@@ -13,3 +14,4 @@ h1 {
     padding: 15px;
     font-family: 'Cinzel', serif;
 }
+
