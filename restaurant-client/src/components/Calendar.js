@@ -14,6 +14,7 @@ class Calendar extends Component {
 
   handleDateChange(event) {
     this.setState({ date: event.target.value })
+    this.props.handleSelectedDate(event.target.value);
   }
 
 

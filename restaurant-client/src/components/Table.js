@@ -16,16 +16,19 @@ class Table extends Component {
     }
   }
 
-  // function(bookingId) {
-  //   findCustomerByBookingId(bookingId)
-
-
-  //   bookingId
-  // }
+  showBookingsBySelectedDate() {
+    if (!this.props.tableData._embedded) {
+      return [];
+    } 
+    return this.props.tableData._embedded.bookings.filter(booking => {
+      return this.props.selectedDate === booking.date
+    })
+  }
 
   render() {
     const { tableData } = this.props
     const { bookingData } = this.props
+    const filteredBookingsByDate = this.showBookingsBySelectedDate();
 
     return (
       <div
@@ -35,8 +38,7 @@ class Table extends Component {
         <h3>Table {this.props.tableData.id}</h3>
 
         {
-          tableData._embedded && 
-          tableData._embedded.bookings.map(booking =>
+          filteredBookingsByDate.map(booking =>
             <span
             key={booking.id}>
               <p>Name: {booking.customer.name}</p>

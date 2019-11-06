@@ -14,9 +14,11 @@ class RestaurantBox extends Component {
       customers: [],
       tables: [],
       bookings: [],
-      isLoading: true
+      isLoading: true,
+      selectedDate: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSelectedDate = this.handleSelectedDate.bind(this);
   }
 
   async componentDidMount() {
@@ -45,42 +47,55 @@ class RestaurantBox extends Component {
     this.setState({ isLoading: false})
   }
 
-    handleSubmit(formData) {
-      console.log(formData.table)
-      const customerData = null;
-      const bookingData = null;
-      console.log(formData)
+  handleSubmit(formData) {
+    console.log(formData.table)
+    const customerData = null;
+    const bookingData = null;
+    console.log(formData)
 
-      fetch("http://localhost:8080/customers", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      }) 
-        .then(res => res.json())
-        .then(customer => {
+    fetch("http://localhost:8080/customers", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    }) 
+      .then(res => res.json())
+      .then(customer => {
 
-          fetch("http://localhost:8080/bookings", {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              time: formData.time,
-              date: formData.date,
-              partySize: formData.partySize,
-              duration: 120,
-              customer: 'http://localhost:8080/customers/' + customer.id,
-              table: 'http://localhost:8080/tables/' + formData.table
-            })
+        fetch("http://localhost:8080/bookings", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            time: formData.time,
+            date: formData.date,
+            partySize: formData.partySize,
+            duration: 120,
+            customer: 'http://localhost:8080/customers/' + customer.id,
+            table: 'http://localhost:8080/tables/' + formData.table
           })
-            .then(res => res.json())
-            .then(booking => {
-              console.log('booking', booking)
-            })
         })
-    };
+          .then(res => res.json())
+          .then(booking => {
+            console.log('booking', booking)
+          })
+      })
+  };
+
+  handleSelectedDate(date) {
+    this.setState({selectedDate: date});
+  }
+
+  // fetchBookingsByDate(dateToFind) {
+  //   console.log(dateToFind)
+  //   fetch("http://localhost:8080/bookings/search/findAllByDate?date=" + dateToFind)
+  //     .then(response => response.json())
+  //     .then(data => this.setState({
+  //       bookingsOnSelectedDate: data,
+  //     }))
+  // }; 
 
 
   render() {
@@ -92,7 +107,9 @@ class RestaurantBox extends Component {
     return (
       <div>
       <div className="Header">
-        <Header />
+        <Header 
+            handleSelectedDate={this.handleSelectedDate}
+        />
       </div>
       <div className="booking-list"></div>
       <div className="left" >
@@ -104,7 +121,7 @@ class RestaurantBox extends Component {
           <TableLayout 
           bookingData={this.state.bookings}
           tableData={this.state.tables}
-          
+          selectedDate={this.state.selectedDate}
           />
         </div>
       </div>

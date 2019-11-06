@@ -14,7 +14,8 @@ class TableLayout extends Component {
       <div className="wrapper">
         {this.props.tableData.map(table => 
           <Table 
-            tableData={table} 
+            tableData={table}
+            selectedDate={this.props.selectedDate} 
             key={table.id} />
         )
         }
