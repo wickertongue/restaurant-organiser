@@ -20,6 +20,8 @@
   border-radius: 10px;
   text-align: center;
   line-height: 5px;
+  min-height: 170px;
+  overflow: auto;
 }
 
 .table p {
