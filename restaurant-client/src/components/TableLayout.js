@@ -16,14 +16,6 @@ class TableLayout extends Component {
           <Table 
             tableData={table} 
             key={table.id} />
-         
-         
-         
-            // {/* { 
-            // table["_embedded"].bookings.map(booking => 
-            //   <p>{booking.date}</p> )
-            // }
-            // </Table> */}
         )
         }
       </div>
