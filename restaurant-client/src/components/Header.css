@@ -1,0 +1,33 @@
+.tableHead {
+    font-size: 100%;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.subHead {
+    font-size: 75%;
+    font-weight: normal;
+    font-style: italic
+}
+
+h1 {
+    background-color: #05386B;
+    color: rgb(216, 213, 218);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    font-family: 'Cinzel', serif;
+}
+
+.calendar {
+    background-color: #05386B;
+    padding-left: 475px;
+    font-size: 24px;
+}
+
+img {
+    height: 15%;
+    width: 15%;
+    float: right;
+    margin-top: -30px;
+}
