@@ -6,15 +6,9 @@ import BookingForm from "../components/BookingForm";
 class SideBar extends Component {
     render() {
         return (
-            <div> 
-        
-            <div> 
+
             <BookingForm handleSubmit={this.props.handleSubmit} />
-            </div>
-            <div className='CustomerList'> 
-                <CustomerList /> 
-            </div>
-            </div>
+
         );
     }
 }
