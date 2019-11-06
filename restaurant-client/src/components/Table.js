@@ -32,14 +32,43 @@ class Table extends Component {
   }
 
   render() {
+    const { tableData } = this.props
+
     return (
       <div
         className="table1"
         style={{ backgroundColor: this.state.bgColor }}
         onClick={this.boxClick}>
         <p>Table {this.props.tableData.id}</p>
-        {this.showBookingIfExists()}
+
+        {
+          tableData._embedded && 
+          tableData._embedded.bookings.map(booking =>
+            <span
+            key={booking.id}>
+              <p>Booked on: {booking.date}</p>
+              <p>At: {booking.time}</p>
+            </span>
+          )
+        }
       </div>
+
+      // for each booking, in booking array, create booking
+
+      // <div>
+
+      //   {this.props.map(table =>
+      //     <Table
+      //       tableData={table}
+      //       key={table.id} />)
+      //   }
+
+
+
+      // </div>
+
+      
+
 
       // {/* <div className="wrapper">
       //   {this.props.tableData["_embedded"].bookings.map(booking => 

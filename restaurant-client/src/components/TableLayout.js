@@ -14,8 +14,17 @@ class TableLayout extends Component {
       <div className="wrapper">
         {this.props.tableData.map(table => 
           <Table 
-            tableData={table}
-            key={table.id} />)
+            tableData={table} 
+            key={table.id} />
+         
+         
+         
+            // {/* { 
+            // table["_embedded"].bookings.map(booking => 
+            //   <p>{booking.date}</p> )
+            // }
+            // </Table> */}
+        )
         }
       </div>
     )
