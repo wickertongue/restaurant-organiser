@@ -29,29 +29,22 @@ class Table extends Component {
 
     return (
       <div
-        className="table1"
+        className="table"
         style={{ backgroundColor: this.state.bgColor }}
         onClick={this.boxClick}>
-        <p>Table {this.props.tableData.id}</p>
+        <h3>Table {this.props.tableData.id}</h3>
 
         {
           tableData._embedded && 
           tableData._embedded.bookings.map(booking =>
             <span
             key={booking.id}>
+              <p>Name: {booking.customer.name}</p>
               <p>Booked on: {booking.date}</p>
               <p>At: {booking.time}</p>
             </span>
           )
         }
-        { bookingData &&
-          bookingData.map(booking =>
-          <span 
-          key={booking.id}>
-            <p>{booking._embedded.customer.name}</p>
-            <p>{booking._embedded.table.id}</p>
-          </span>
-        )}
       </div>
     )
   }

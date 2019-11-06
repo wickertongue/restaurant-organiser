@@ -3,8 +3,7 @@ import Calendar from "./Calendar"
 import "./Header.css"
 
 class Header extends Component {
-
-
+z
     render() {
 
         return (
@@ -15,9 +14,7 @@ class Header extends Component {
                     <img src={require("./restuarant.jpg")}/>
                 </h1> 
                 <div className="calendar">
-                        <Calendar
-                            handleSelectedDate= {this.props.handleSelectedDate} 
-                            /> 
+                        <Calendar /> 
                 </div>
             </div>
             

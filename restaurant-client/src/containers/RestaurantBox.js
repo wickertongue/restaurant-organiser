@@ -14,11 +14,9 @@ class RestaurantBox extends Component {
       customers: [],
       tables: [],
       bookings: [],
-      isLoading: true,
-      selectedDate: null
+      isLoading: true
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleSelectedDate = this.handleSelectedDate.bind(this);
   }
 
   async componentDidMount() {
@@ -84,10 +82,6 @@ class RestaurantBox extends Component {
         })
     };
 
-    handleSelectedDate(date) {
-      this.state.selectedDate = date;
-    }
-
 
   render() {
     const { isLoading } = this.state;
@@ -98,9 +92,7 @@ class RestaurantBox extends Component {
     return (
       <div>
       <div className="Header">
-        <Header 
-          handleSelectedDate = {this.handleSelectedDate}
-        />
+        <Header />
       </div>
       <div className="booking-list"></div>
       <div className="left" >
@@ -110,8 +102,8 @@ class RestaurantBox extends Component {
       </div>
         <div className="right">
           <TableLayout 
-            bookingData={this.state.bookings}
-            tableData={this.state.tables}
+          bookingData={this.state.bookings}
+          tableData={this.state.tables}
           
           />
         </div>

@@ -9,7 +9,7 @@
 
 
   }
-  .table1 {
+  .table {
       background-color: rgb(216, 213, 218);
       border: 1px solid black;
       align-self: stretch;
@@ -22,63 +22,7 @@
       text-align: center;
       /* padding: 80px */
   }
-  .table2 {
-    background-color: rgb(216, 213, 218);
-      border: 1px solid black;
-      align-self: stretch;
-      margin-top: 30px;
-      margin-right: 0px;
-      margin-bottom: 50px;
-      margin-left: 0px;
-      padding: px;
-      text-align: center;
-      border-radius: 10px;
-  }
-  .table3 {
-    background-color: rgb(216, 213, 218);
-      border: 1px solid black;
-      align-self: stretch;
-      margin-right: 50px;
-      margin-top: 30px;
-      margin-left: 75px;
-      margin-bottom: 50px;
-      grid-column-start: 3;
-      grid-column-end: 3;
-      grid-row-start: 1;
-      grid-row-end: 3;
-      padding: px;
-      text-align: center;
-      border-radius: 10px;
 
-  }
-  .table4 {
-    background-color: rgb(216, 213, 218);
-    border: 1px solid black;
-    align-self: stretch;
-    margin-right: 100px;
-      margin-left: 50px ;
-      margin-top: 30px;
-      margin-bottom: 50px;
-      grid-column-start: 1;
-      grid-column-end: 1;
-      grid-row-start: 2;
-      grid-row-end: 2;
-      padding: px;
-      text-align: center;
-      border-radius: 10px;
-  }
-  .table5 {
-    background-color: rgb(216, 213, 218));
-    border: 1px solid black;
-    /* margin-right: px; */
-    margin-bottom: 50px;
-    margin-top: 30px;
-    margin-left: px;
-    align-self: stretch;
-    padding: px;
-    text-align: center;
-    border-radius: 10px;
-  }
     input[type=button], input[type=submit], input[type=reset] {
     background-color: #4CAF50;
     border: none;
