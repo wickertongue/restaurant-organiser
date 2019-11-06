@@ -16,23 +16,16 @@ class Table extends Component {
     }
   }
 
-  showBookingIfExists(props) {
-    const objectSize = Object.keys(this.props.tableData).length
+  // function(bookingId) {
+  //   findCustomerByBookingId(bookingId)
 
-    if (objectSize >= 4) {
-      const dateOfBooking = this.props.tableData["_embedded"].bookings[0].date;
-      const timeOfBooking = this.props.tableData["_embedded"].bookings[0].time;
-      return <div>      
-      <p>Booked on: {dateOfBooking}</p>
-      <p>At: {timeOfBooking}</p>
-      </div>
-    } else {
-      return <p>Currently Available</p>
-    }
-  }
+
+  //   bookingId
+  // }
 
   render() {
     const { tableData } = this.props
+    const { bookingData } = this.props
 
     return (
       <div
@@ -51,31 +44,15 @@ class Table extends Component {
             </span>
           )
         }
+        { bookingData &&
+          bookingData.map(booking =>
+          <span 
+          key={booking.id}>
+            <p>{booking._embedded.customer.name}</p>
+            <p>{booking._embedded.table.id}</p>
+          </span>
+        )}
       </div>
-
-      // for each booking, in booking array, create booking
-
-      // <div>
-
-      //   {this.props.map(table =>
-      //     <Table
-      //       tableData={table}
-      //       key={table.id} />)
-      //   }
-
-
-
-      // </div>
-
-      
-
-
-      // {/* <div className="wrapper">
-      //   {this.props.tableData["_embedded"].bookings.map(booking => 
-      //     <p>Hello!</p>)
-      //   }
-      // </div> */}
-
     )
   }
 }

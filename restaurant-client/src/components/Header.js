@@ -4,6 +4,7 @@ import "./Header.css"
 
 class Header extends Component {
 
+
     render() {
 
         return (
@@ -14,7 +15,9 @@ class Header extends Component {
                     <img src={require("./restuarant.jpg")}/>
                 </h1> 
                 <div className="calendar">
-                        <Calendar /> 
+                        <Calendar
+                            handleSelectedDate= {this.props.handleSelectedDate} 
+                            /> 
                 </div>
             </div>
             

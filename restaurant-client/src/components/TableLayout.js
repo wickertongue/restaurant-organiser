@@ -15,9 +15,8 @@ class TableLayout extends Component {
         {this.props.tableData.map(table => 
           <Table 
             tableData={table} 
+            bookingData={this.props.bookingData}
             key={table.id} />
-         
-         
          
             // {/* { 
             // table["_embedded"].bookings.map(booking => 
