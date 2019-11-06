@@ -5,6 +5,7 @@ import "./Header.css"
 class Header extends Component {
 
     render() {
+        
 
         return (
             <div>
@@ -14,7 +15,7 @@ class Header extends Component {
                     <img src={require("./restuarant.jpg")}/>
                 </h1> 
                 <div className="calendar">
-                        <Calendar /> 
+                        <Calendar selectedDate={this.props.selectedDate}/> 
                 </div>
             </div>
             
