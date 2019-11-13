@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Table extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Table extends Component {
   showBookingsBySelectedDate() {
     if (!this.props.tableData._embedded) {
       return [];
-    } 
+    }
     return this.props.tableData._embedded.bookings.filter(booking => {
       return this.props.selectedDate === booking.date
     })
@@ -29,6 +29,14 @@ class Table extends Component {
     const { tableData } = this.props
     const { bookingData } = this.props
     const filteredBookingsByDate = this.showBookingsBySelectedDate();
+    const bookingSpans = filteredBookingsByDate.map(booking =>
+      <span
+        key={booking.id}>
+        <p>Name: {booking.customer.name}</p>
+        <p>Booked on: {booking.date}</p>
+        <p>At: {booking.time}</p>
+      </span>
+    )
 
     return (
       <div
@@ -36,17 +44,7 @@ class Table extends Component {
         style={{ backgroundColor: this.state.bgColor }}
         onClick={this.boxClick}>
         <h3>Table {this.props.tableData.id}</h3>
-
-        {
-          filteredBookingsByDate.map(booking =>
-            <span
-            key={booking.id}>
-              <p>Name: {booking.customer.name}</p>
-              <p>Booked on: {booking.date}</p>
-              <p>At: {booking.time}</p>
-            </span>
-          )
-        }
+        {bookingSpans}
       </div>
     )
   }

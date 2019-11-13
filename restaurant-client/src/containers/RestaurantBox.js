@@ -1,7 +1,5 @@
-import React, {Component} from "react";
-import BookingList from "../components/BookingList";
+import React, { Component } from "react";
 import TableLayout from "../components/TableLayout";
-import ColorChange from "../components/ColorChange";
 import SideBar from "../components/SideBar";
 import Header from "../components/Header";
 import "./RestaurantBox.css"
@@ -44,7 +42,7 @@ class RestaurantBox extends Component {
       tables: tables["_embedded"].dinnerTables,
     });
 
-    this.setState({ isLoading: false})
+    this.setState({ isLoading: false })
   }
 
   handleSubmit(formData) {
@@ -59,7 +57,7 @@ class RestaurantBox extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(formData)
-    }) 
+    })
       .then(res => res.json())
       .then(customer => {
 
@@ -77,26 +75,17 @@ class RestaurantBox extends Component {
             table: 'http://localhost:8080/tables/' + formData.table
           })
         })
-          .then(res => res.json())
+          .then((res) => res.json())
           .then(booking => {
-            console.log('booking', booking)
+            const newBookings = [...this.state.bookings, booking] 
+            this.setState({ bookings: newBookings });
           })
       })
   };
 
   handleSelectedDate(date) {
-    this.setState({selectedDate: date});
+    this.setState({ selectedDate: date });
   }
-
-  // fetchBookingsByDate(dateToFind) {
-  //   console.log(dateToFind)
-  //   fetch("http://localhost:8080/bookings/search/findAllByDate?date=" + dateToFind)
-  //     .then(response => response.json())
-  //     .then(data => this.setState({
-  //       bookingsOnSelectedDate: data,
-  //     }))
-  // }; 
-
 
   render() {
     const { isLoading } = this.state;
@@ -106,22 +95,22 @@ class RestaurantBox extends Component {
     }
     return (
       <div>
-      <div className="Header">
-        <Header 
+        <div className="Header">
+          <Header
             handleSelectedDate={this.handleSelectedDate}
-        />
-      </div>
-      <div className="booking-list"></div>
-      <div className="left" >
-          <SideBar 
-              tableData={this.state.data}
-              handleSubmit={this.handleSubmit} />
-      </div>
+          />
+        </div>
+        <div className="booking-list"></div>
+        <div className="left" >
+          <SideBar
+            tableData={this.state.data}
+            handleSubmit={this.handleSubmit} />
+        </div>
         <div className="right">
-          <TableLayout 
-          bookingData={this.state.bookings}
-          tableData={this.state.tables}
-          selectedDate={this.state.selectedDate}
+          <TableLayout
+            bookingData={this.state.bookings}
+            tableData={this.state.tables}
+            selectedDate={this.state.selectedDate}
           />
         </div>
       </div>
