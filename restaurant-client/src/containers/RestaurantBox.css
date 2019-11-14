@@ -1,13 +1,9 @@
-div {
-  border: black solid 1px;
-}
-
-.container {
+div .container {
   display: flex;
   padding: 10px;
-  border: blue solid 1px;
-}
+  border: 1px black solid;
+};
 
-.right {
+div .right {
   flex-grow: 8;
-}
+};

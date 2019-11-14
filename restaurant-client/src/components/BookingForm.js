@@ -55,53 +55,71 @@ class BookingForm extends Component {
   render() {
     return (
       <form className="booking-form" onSubmit={this.onSubmit}>
-        <ul>
-          <input
-            type="text"
-            placeholder="Customer Name"
-            value={this.state.name}
-            onChange={this.handleNameChange}
-          />
-        </ul>
-        <ul>
-          <input
-            type="date"
-            placeholder="Date"
-            value={this.state.date}
-            onChange={this.handleDateChange}
-          />
-        </ul>
-        <ul>
-          <input
-            type="time"
-            placeholder="Time"
-            value={this.state.time}
-            onChange={this.handleTimeChange}
-          />
-        </ul>
-        <ul>
-          <input
-            type="text"
-            placeholder="Party Size"
-            value={this.state.partySize}
-            onChange={this.handlePartySizeChange}
-          />
-        </ul>
-        <ul>
-          <select onChange={this.handleTableChange}>
-            <option value={this.state.table}>1</option>
-            <option value={this.state.table}>2</option>
-            <option value={this.state.table}>3</option>
-            <option value={this.state.table}>4</option>
-            <option value={this.state.table}>5</option>
-            <option value={this.state.table}>6</option>
-          </select>
-        </ul>
-
-        <ul>
-         <input type="submit" value="Make Booking" />
-        </ul>
-        
+        <table>
+          <tr>
+            <th>Name: </th>
+              <td>
+                <input
+                type="text"
+                placeholder="Customer Name"
+                value={this.state.name}
+                onChange={this.handleNameChange}
+                />
+              </td>
+          </tr>
+          <tr>
+            <th>Date: </th>
+              <td>
+                <input
+                  type="date"
+                  placeholder="Date"
+                  value={this.state.date}
+                  onChange={this.handleDateChange}
+                />
+              </td>
+          </tr>
+          <tr>
+          <th>Time: </th>
+            <td>
+              <input
+                type="time"
+                placeholder="Time"
+                value={this.state.time}
+                onChange={this.handleTimeChange}
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Party Size: </th>
+            <td>
+              <input
+                type="text"
+                placeholder="Party Size"
+                value={this.state.partySize}
+                onChange={this.handlePartySizeChange}
+              />
+            </td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>
+              <select onChange={this.handleTableChange}>
+                <option value={this.state.table}>1</option>
+                <option value={this.state.table}>2</option>
+                <option value={this.state.table}>3</option>
+                <option value={this.state.table}>4</option>
+                <option value={this.state.table}>5</option>
+                <option value={this.state.table}>6</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>
+              <input type="submit" value="Make Booking" />
+            </td>
+          </tr>
+        </table>
       </form>
     )
   }
