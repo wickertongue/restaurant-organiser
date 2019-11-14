@@ -1,13 +1,13 @@
-div .container {
-  display: flex;
-}
-
 div {
-  padding: 10px;
   border: black solid 1px;
 }
 
-span {
+.container {
+  display: flex;
   padding: 10px;
   border: blue solid 1px;
+}
+
+.right {
+  flex-grow: 8;
 }

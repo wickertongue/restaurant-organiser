@@ -1,7 +1,5 @@
 import React, {Component} from "react";
-import BookingList from "../components/BookingList";
 import TableLayout from "../components/TableLayout";
-import ColorChange from "../components/ColorChange";
 import SideBar from "../components/SideBar";
 import Header from "../components/Header";
 import "./RestaurantBox.css"
@@ -102,13 +100,13 @@ class RestaurantBox extends Component {
           />
         </span>
         <div class="container">
-          <span class="left">
+          <span name="left">
             <SideBar 
               tableData={this.state.data}
               handleSubmit={this.handleSubmit} 
             />
           </span>
-          <span>
+          <span class="right">
             <TableLayout 
               bookingData={this.state.bookings}
               tableData={this.state.tables}

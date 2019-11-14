@@ -55,40 +55,53 @@ class BookingForm extends Component {
   render() {
     return (
       <form className="booking-form" onSubmit={this.onSubmit}>
-        <input
-          type="text"
-          placeholder="Customer Name"
-          value={this.state.name}
-          onChange={this.handleNameChange}
-        />
-        <input
-          type="date"
-          placeholder="Date"
-          value={this.state.date}
-          onChange={this.handleDateChange}
-        />
-        <input
-          type="time"
-          placeholder="Time"
-          value={this.state.time}
-          onChange={this.handleTimeChange}
-        />
-        <input
-          type="text"
-          placeholder="Party Size"
-          value={this.state.partySize}
-          onChange={this.handlePartySizeChange}
-        />
-        <select onChange={this.handleTableChange}>
-          <option value={this.state.table}>1</option>
-          <option value={this.state.table}>2</option>
-          <option value={this.state.table}>3</option>
-          <option value={this.state.table}>4</option>
-          <option value={this.state.table}>5</option>
-          <option value={this.state.table}>6</option>
-        </select>
+        <ul>
+          <input
+            type="text"
+            placeholder="Customer Name"
+            value={this.state.name}
+            onChange={this.handleNameChange}
+          />
+        </ul>
+        <ul>
+          <input
+            type="date"
+            placeholder="Date"
+            value={this.state.date}
+            onChange={this.handleDateChange}
+          />
+        </ul>
+        <ul>
+          <input
+            type="time"
+            placeholder="Time"
+            value={this.state.time}
+            onChange={this.handleTimeChange}
+          />
+        </ul>
+        <ul>
+          <input
+            type="text"
+            placeholder="Party Size"
+            value={this.state.partySize}
+            onChange={this.handlePartySizeChange}
+          />
+        </ul>
+        <ul>
+          <select onChange={this.handleTableChange}>
+            <option value={this.state.table}>1</option>
+            <option value={this.state.table}>2</option>
+            <option value={this.state.table}>3</option>
+            <option value={this.state.table}>4</option>
+            <option value={this.state.table}>5</option>
+            <option value={this.state.table}>6</option>
+          </select>
+        </ul>
 
-        <input type="submit" value="Make Booking" />
+        <ul>
+         <input type="submit" value="Make Booking" />
+        </ul>
+        
       </form>
     )
   }

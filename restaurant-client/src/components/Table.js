@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Table.css'
 
 class Table extends Component {
   constructor(props) {
@@ -32,11 +33,11 @@ class Table extends Component {
 
     return (
       <div
-        className="table"
+        class="table"
         style={{ backgroundColor: this.state.bgColor }}
-        onClick={this.boxClick}>
+        onClick={this.boxClick}
+      >
         <h3>Table {this.props.tableData.id}</h3>
-
         {
           filteredBookingsByDate.map(booking =>
             <span

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Table from './Table';
+import './TableLayout.css'
 
 class TableLayout extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class TableLayout extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div class="tables">
         {this.props.tableData.map(table => 
           <Table 
             tableData={table}
