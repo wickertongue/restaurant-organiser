@@ -1,40 +1,6 @@
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  align-items: end;
-  grid-auto-rows: 210px;
-  grid-auto-columns: 25%;
-  width: 80%;
-  background-color: #EDF5E1 ;
-  }
+div .wrapper {
+  display: flex;
 
-.table {
-  background-color: rgb(216, 213, 218);
-  border: 1px solid black;
-  align-self: stretch;
-  padding: px;
-  margin-right: 20px;
-  margin-left: 35px ;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-radius: 10px;
-  text-align: center;
-  line-height: 5px;
-  min-height: 170px;
-  overflow: auto;
-}
-
-.table p {
-  text-align: left;
-  margin-left: 15px
-}
-
-input[type=button], input[type=submit], input[type=reset] {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }

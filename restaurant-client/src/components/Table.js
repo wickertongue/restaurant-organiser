@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Table.css'
 
 class Table extends Component {
   constructor(props) {
@@ -32,15 +33,26 @@ class Table extends Component {
     const bookingSpans = filteredBookingsByDate.map(booking =>
       <span
         key={booking.id}>
-        <p>Name: {booking.customer.name}</p>
-        <p>Booked on: {booking.date}</p>
-        <p>At: {booking.time}</p>
+          <table>
+            <tr>
+              <th>Name:</th>
+              <td>{booking.customer.name}</td>
+            </tr>
+            <tr>
+              <th>Date:</th>
+              <td>{booking.date}</td>
+            </tr>
+            <tr>
+              <th>Time:</th>
+              <td>{booking.time}</td>
+            </tr>
+          </table>
       </span>
     )
 
     return (
       <div
-        className="table"
+        class="table"
         style={{ backgroundColor: this.state.bgColor }}
         onClick={this.boxClick}>
         <h3>Table {this.props.tableData.id}</h3>

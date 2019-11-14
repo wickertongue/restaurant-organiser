@@ -8,18 +8,14 @@ class Header extends Component {
 
     return (
       <div>
-        <div>
-          <h1>Welcome to The Cohort<br />
-            <span className="subHead">Fine Dining in Edinburgh</span>
-            <img src={require("./restuarant.jpg")} />
-          </h1>
-          <div className="calendar">
-            <Calendar
-              handleSelectedDate={this.props.handleSelectedDate}
-            />
-          </div>
-        </div>
-
+        <h1>Welcome to The Cohort</h1>
+          <h2>Fine Dining in Edinburgh</h2>
+          {/* <img src={require("./restuarant.jpg")} /> */}
+        <span className="calendar">
+          <Calendar
+            handleSelectedDate={this.props.handleSelectedDate}
+          />
+        </span>
       </div>
     );
   }

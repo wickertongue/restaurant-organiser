@@ -10,9 +10,6 @@ class TableLayout extends Component {
   }
 
   render() {
-
-    
-
     return (
       <div className="wrapper">
         {this.props.tableData.map(table =>
@@ -20,7 +17,7 @@ class TableLayout extends Component {
             tableData={table}
             selectedDate={this.props.selectedDate}
             key={table.id} />
-        )
+          )
         }
       </div>
     )

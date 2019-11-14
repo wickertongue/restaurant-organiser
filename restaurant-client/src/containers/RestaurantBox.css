@@ -1,10 +1,22 @@
-
-.left {
-    float: left;
-    background-color: #8EE4AF;
-    height: 420px;
-    width: 20%;
-    
+.container {
+  display: flex;
 }
 
+ div {
+  border: black solid 1px;
+  /* padding: 10px; */
+} 
+
+span {
+  border: blue dashed 1px;
+  /* padding: 10px; */
+}
+
+span .right {
+  flex-grow: 20;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
 
