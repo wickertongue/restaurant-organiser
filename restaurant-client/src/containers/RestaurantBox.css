@@ -1,9 +1,6 @@
 div .container {
   display: flex;
   padding: 10px;
-  border: 1px black solid;
+  border: 1px ivory solid;
 };
 
-div .right {
-  flex-grow: 8;
-};

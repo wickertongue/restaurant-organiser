@@ -33,7 +33,7 @@ class Table extends Component {
 
     return (
       <div
-        class="table"
+        class="singletable"
         style={{ backgroundColor: this.state.bgColor }}
         onClick={this.boxClick}
       >

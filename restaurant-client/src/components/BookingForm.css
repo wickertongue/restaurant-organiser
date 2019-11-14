@@ -1,0 +1,26 @@
+th {
+  width: 1px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+input {
+  width: 150px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+form {
+  text-align: center;
+}
+
+select {
+  width: 100%
+}
+
+.submit {
+  width: 200px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

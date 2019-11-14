@@ -55,7 +55,7 @@ class BookingForm extends Component {
   render() {
     return (
       <form className="booking-form" onSubmit={this.onSubmit}>
-        <table>
+        <table class="table">
           <tr>
             <th>Name: </th>
               <td>
@@ -101,7 +101,7 @@ class BookingForm extends Component {
             </td>
           </tr>
           <tr>
-            <th></th>
+            <th>Table No: </th>
             <td>
               <select onChange={this.handleTableChange}>
                 <option value={this.state.table}>1</option>
@@ -113,13 +113,9 @@ class BookingForm extends Component {
               </select>
             </td>
           </tr>
-          <tr>
-            <th></th>
-            <td>
-              <input type="submit" value="Make Booking" />
-            </td>
-          </tr>
+          <tr></tr>
         </table>
+        <input class="submit" type="submit" value="Make Booking" />
       </form>
     )
   }
