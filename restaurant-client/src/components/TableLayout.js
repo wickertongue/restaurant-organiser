@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "./TableLayout.css";
 import Table from './Table';
 
 class TableLayout extends Component {

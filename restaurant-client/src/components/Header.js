@@ -3,26 +3,18 @@ import Calendar from "./Calendar"
 import "./Header.css"
 
 class Header extends Component {
-z
-    render() {
+  render() {
 
-        return (
-            <div>
-            <div> 
-                <h1>Welcome to The Cohort<br />
-                    <span className ="subHead">Fine Dining in Edinburgh</span>
-                    <img src={require("./restuarant.jpg")}/>
-                </h1> 
-                <div className="calendar">
-                        <Calendar 
-                            handleSelectedDate={this.props.handleSelectedDate}
-                        /> 
-                </div>
-            </div>
-            
-            </div>
-        );
-    }
+    return (
+      <div> 
+        <h1>Welcome to The Cohort</h1>
+        <h2>Fine Dining in Edinburgh</h2>
+          <Calendar 
+              handleSelectedDate={this.props.handleSelectedDate}
+          /> 
+      </div>
+      );
+  }
 }
 
 export default Header;

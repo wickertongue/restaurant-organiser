@@ -1,10 +1,13 @@
-
-.left {
-    float: left;
-    background-color: #8EE4AF;
-    height: 420px;
-    width: 20%;
-    
+div .container {
+  display: flex;
 }
 
+div {
+  padding: 10px;
+  border: black solid 1px;
+}
 
+span {
+  padding: 10px;
+  border: blue solid 1px;
+}

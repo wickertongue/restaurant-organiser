@@ -88,16 +88,6 @@ class RestaurantBox extends Component {
     this.setState({selectedDate: date});
   }
 
-  // fetchBookingsByDate(dateToFind) {
-  //   console.log(dateToFind)
-  //   fetch("http://localhost:8080/bookings/search/findAllByDate?date=" + dateToFind)
-  //     .then(response => response.json())
-  //     .then(data => this.setState({
-  //       bookingsOnSelectedDate: data,
-  //     }))
-  // }; 
-
-
   render() {
     const { isLoading } = this.state;
 
@@ -106,23 +96,25 @@ class RestaurantBox extends Component {
     }
     return (
       <div>
-      <div className="Header">
-        <Header 
+        <span name="header">
+          <Header 
             handleSelectedDate={this.handleSelectedDate}
-        />
-      </div>
-      <div className="booking-list"></div>
-      <div className="left" >
-          <SideBar 
-              tableData={this.state.data}
-              handleSubmit={this.handleSubmit} />
-      </div>
-        <div className="right">
-          <TableLayout 
-          bookingData={this.state.bookings}
-          tableData={this.state.tables}
-          selectedDate={this.state.selectedDate}
           />
+        </span>
+        <div class="container">
+          <span class="left">
+            <SideBar 
+              tableData={this.state.data}
+              handleSubmit={this.handleSubmit} 
+            />
+          </span>
+          <span>
+            <TableLayout 
+              bookingData={this.state.bookings}
+              tableData={this.state.tables}
+              selectedDate={this.state.selectedDate}
+            />
+          </span>
         </div>
       </div>
     );
