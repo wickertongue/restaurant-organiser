@@ -113,7 +113,6 @@ class BookingForm extends Component {
               </select>
             </td>
           </tr>
-          <tr></tr>
         </table>
         <input class="submit" type="submit" value="Make Booking" />
       </form>

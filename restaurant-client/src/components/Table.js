@@ -5,15 +5,15 @@ class Table extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      bgColor: '#8EE4AF'
+      bgColor: '#FE8019'
     }
   }
 
   boxClick = () => {
-    if (this.state.bgColor === '#8EE4AF') {
-      this.setState({ bgColor: '#FC4445' })
-    } else {
+    if (this.state.bgColor === '#FE8019') {
       this.setState({ bgColor: '#8EE4AF' })
+    } else {
+      this.setState({ bgColor: '#FE8019' })
     }
   }
 

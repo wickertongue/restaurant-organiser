@@ -94,11 +94,9 @@ class RestaurantBox extends Component {
     }
     return (
       <div>
-        <span name="header">
           <Header 
             handleSelectedDate={this.handleSelectedDate}
           />
-        </span>
         <div class="container">
           <span name="left">
             <SideBar 
