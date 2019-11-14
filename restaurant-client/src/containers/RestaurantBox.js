@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import TableLayout from "../components/TableLayout";
 import SideBar from "../components/SideBar";
 import Header from "../components/Header";
+import Calendar from "../components/Calendar"
+
 import "./RestaurantBox.css"
 
 class RestaurantBox extends Component {
@@ -93,11 +95,20 @@ class RestaurantBox extends Component {
       return <p>Loading...</p>;
     }
     return (
-      <div>
-          <Header 
-            handleSelectedDate={this.handleSelectedDate}
-          />
-        <div class="container">
+      <div class="main">
+        <div>
+          <span class="left">
+            <Header 
+              handleSelectedDate={this.handleSelectedDate}
+            />
+          </span>
+          <span class="right">
+            <Calendar
+              handleSelectedDate={this.props.handleSelectedDate}
+            />
+          </span>
+        </div> 
+        <div>
           <span name="left">
             <SideBar 
               tableData={this.state.data}

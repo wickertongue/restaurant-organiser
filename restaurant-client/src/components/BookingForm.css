@@ -7,11 +7,6 @@ th {
 input {
   width: 150px;
   text-align: left;
-  padding-left: 10px;
-}
-
-form {
-  text-align: center;
 }
 
 select {
@@ -19,7 +14,7 @@ select {
 }
 
 .submit {
-  width: 200px;
+  width: 150px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
