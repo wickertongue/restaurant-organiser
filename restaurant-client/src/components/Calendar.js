@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Calendar.css'
 
 
 class Calendar extends Component {
@@ -17,7 +18,6 @@ class Calendar extends Component {
     this.props.handleSelectedDate(event.target.value);
   }
 
-
   onSubmit(event) {
     console.log(event)
     event.preventDefault(event);
@@ -31,15 +31,15 @@ class Calendar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        
-        <input
-          type="date"
-          placeholder="Date"
-          value={this.state.date}
-          onChange={this.handleDateChange}
-        />
-      </form>
+        <form onSubmit={this.onSubmit}>
+          <input
+            type="date"
+            placeholder="Date"
+            value={this.state.date}
+            onChange={this.handleDateChange}
+            class="datepicker"
+          />
+        </form>
     )
   }
 }

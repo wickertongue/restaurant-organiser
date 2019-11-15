@@ -1,3 +1,7 @@
+.bookingform {
+  display: flex;
+}
+
 th {
   width: 1px;
   white-space: nowrap;

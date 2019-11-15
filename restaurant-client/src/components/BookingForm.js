@@ -54,7 +54,7 @@ class BookingForm extends Component {
 
   render() {
     return (
-      <form className="booking-form" onSubmit={this.onSubmit}>
+      <form class="bookingform" onSubmit={this.onSubmit}>
         <table class="table">
           <tr>
             <th>Name: </th>

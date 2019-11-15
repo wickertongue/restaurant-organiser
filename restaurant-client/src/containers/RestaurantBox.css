@@ -1,6 +1,15 @@
+div .right {
+  text-align: center;
+  display: inline-block;
+}
+
+div .left {
+  display: flex;
+  flex-flow: column wrap;
+}
+
 div .main {
   display: flex;
   padding: 10px;
   border: 1px ivory solid;
 };
-

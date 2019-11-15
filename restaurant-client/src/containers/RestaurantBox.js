@@ -96,32 +96,24 @@ class RestaurantBox extends Component {
     }
     return (
       <div class="main">
-        <div>
-          <span class="left">
-            <Header 
-              handleSelectedDate={this.handleSelectedDate}
-            />
-          </span>
-          <span class="right">
-            <Calendar
-              handleSelectedDate={this.props.handleSelectedDate}
-            />
-          </span>
+        <div class="left">
+          <Header 
+            handleSelectedDate={this.handleSelectedDate}
+          />
+          <SideBar
+            tableData={this.state.data}
+            handleSubmit={this.handleSubmit}
+          />
         </div> 
-        <div>
-          <span name="left">
-            <SideBar 
-              tableData={this.state.data}
-              handleSubmit={this.handleSubmit} 
-            />
-          </span>
-          <span class="right">
-            <TableLayout 
-              bookingData={this.state.bookings}
-              tableData={this.state.tables}
-              selectedDate={this.state.selectedDate}
-            />
-          </span>
+        <div class="right">
+          <Calendar
+            handleSelectedDate={this.handleSelectedDate}
+          />
+          <TableLayout 
+            bookingData={this.state.bookings}
+            tableData={this.state.tables}
+            selectedDate={this.state.selectedDate}
+          />
         </div>
       </div>
     );
