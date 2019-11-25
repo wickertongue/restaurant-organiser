@@ -6,7 +6,7 @@ class Calendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date().toLocaleDateString(),
+      date: null,
       modifiedDate: this.manageDate()
     }
     this.handleDateChange = this.handleDateChange.bind(this);
@@ -43,7 +43,7 @@ class Calendar extends Component {
           <input
             type="date"
             placeholder={this.state.date}
-            value={this.state.modifiedDate}
+            value={this.state.date}
             onChange={this.handleDateChange}
             class="datepicker"
           />
