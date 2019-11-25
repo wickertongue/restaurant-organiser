@@ -56,69 +56,71 @@ class BookingForm extends Component {
     return (
       <form class="bookingform" onSubmit={this.onSubmit}>
         <table class="table">
-          <tr>
-            <th>Name: </th>
+          <tbody>
+            <tr>
+              <th>Name: </th>
+                <td>
+                  <input
+                  type="text"
+                  placeholder="Customer Name"
+                  value={this.state.name}
+                  onChange={this.handleNameChange}
+                  />
+                </td>
+            </tr>
+            <tr>
+              <th>Date: </th>
+                <td>
+                  <input
+                    type="date"
+                    placeholder="Date"
+                    value={this.state.date}
+                    onChange={this.handleDateChange}
+                  />
+                </td>
+            </tr>
+            <tr>
+            <th>Time: </th>
               <td>
                 <input
-                type="text"
-                placeholder="Customer Name"
-                value={this.state.name}
-                onChange={this.handleNameChange}
+                  type="time"
+                  placeholder="Time"
+                  value={this.state.time}
+                  onChange={this.handleTimeChange}
                 />
               </td>
-          </tr>
-          <tr>
-            <th>Date: </th>
+            </tr>
+            <tr>
+              <th>Party Size: </th>
               <td>
                 <input
-                  type="date"
-                  placeholder="Date"
-                  value={this.state.date}
-                  onChange={this.handleDateChange}
+                  type="text"
+                  placeholder="Party Size"
+                  value={this.state.partySize}
+                  onChange={this.handlePartySizeChange}
                 />
               </td>
-          </tr>
-          <tr>
-          <th>Time: </th>
-            <td>
-              <input
-                type="time"
-                placeholder="Time"
-                value={this.state.time}
-                onChange={this.handleTimeChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <th>Party Size: </th>
-            <td>
-              <input
-                type="text"
-                placeholder="Party Size"
-                value={this.state.partySize}
-                onChange={this.handlePartySizeChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <th>Table No: </th>
-            <td>
-              <select onChange={this.handleTableChange}>
-                <option value={this.state.table}>1</option>
-                <option value={this.state.table}>2</option>
-                <option value={this.state.table}>3</option>
-                <option value={this.state.table}>4</option>
-                <option value={this.state.table}>5</option>
-                <option value={this.state.table}>6</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <th></th>
-            <td>
-              <input class="submit" type="submit" value="Make Booking" />
-            </td>
-          </tr>
+            </tr>
+            <tr>
+              <th>Table No: </th>
+              <td>
+                <select onChange={this.handleTableChange}>
+                  <option value={this.state.table}>1</option>
+                  <option value={this.state.table}>2</option>
+                  <option value={this.state.table}>3</option>
+                  <option value={this.state.table}>4</option>
+                  <option value={this.state.table}>5</option>
+                  <option value={this.state.table}>6</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+                <input class="submit" type="submit" value="Make Booking" />
+              </td>
+            </tr>
+          </tbody>
         </table>
       </form>
     )

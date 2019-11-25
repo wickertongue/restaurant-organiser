@@ -37,6 +37,8 @@ class Calendar extends Component {
     this.setState({ date: '' });
   }
 
+  // changing the 'value' in the below to the modified date will present the date in the calendar - however, there then needs to be a fetch to display the data.
+
   render() {
     return (
         <form onSubmit={this.onSubmit}>
