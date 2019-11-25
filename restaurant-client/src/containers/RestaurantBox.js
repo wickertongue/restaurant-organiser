@@ -96,8 +96,8 @@ class RestaurantBox extends Component {
       return <p>Loading...</p>;
     }
     return (
-      <div class="main">
-        <div class="left">
+      <div className="main">
+        <div className="left">
           <Header 
             handleSelectedDate={this.handleSelectedDate}
           />
@@ -106,7 +106,7 @@ class RestaurantBox extends Component {
             handleSubmit={this.handleSubmit}
           />
         </div> 
-        <div class="right">
+        <div className="right">
           <Calendar
             handleSelectedDate={this.handleSelectedDate}
           />

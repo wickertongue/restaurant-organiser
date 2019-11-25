@@ -47,7 +47,7 @@ class Calendar extends Component {
             placeholder={this.state.date}
             value={this.state.date}
             onChange={this.handleDateChange}
-            class="datepicker"
+            className="datepicker"
           />
           <p>state.date: {this.state.date}</p>
           <p>modifiedDate: {this.state.modifiedDate}</p>

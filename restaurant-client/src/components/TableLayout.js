@@ -11,7 +11,7 @@ class TableLayout extends Component {
 
   render() {
     return (
-      <div class="tables">
+      <div className="tables">
         {this.props.tableData.map(table => 
           <Table 
             tableData={table}
