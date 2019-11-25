@@ -6,7 +6,7 @@ class Calendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: "",
+      selectedDate: "",
       modifiedDate: this.manageDate()
     }
     this.handleDateChange = this.handleDateChange.bind(this);
@@ -14,7 +14,7 @@ class Calendar extends Component {
   }
 
   handleDateChange(event) {
-    this.setState({ date: event.target.value })
+    this.setState({ selectedDate: event.target.value })
     this.props.handleSelectedDate(event.target.value);
   }
 
@@ -29,12 +29,12 @@ class Calendar extends Component {
   onSubmit(event) {
     console.log(event)
     event.preventDefault(event);
-    const date = this.state.date.trim();
+    const date = this.state.selectedDate.trim();
     if (!date) {
       return
     }
-    this.props.handleSubmit({ date: date });
-    this.setState({ date: '' });
+    this.props.handleSubmit({ selectedDate: date });
+    this.setState({ selectedDate: '' });
   }
 
   // changing the 'value' in the below to the modified date will present the date in the calendar - however, there then needs to be a fetch to display the data.
@@ -44,12 +44,12 @@ class Calendar extends Component {
         <form onSubmit={this.onSubmit}>
           <input
             type="date"
-            placeholder={this.state.date}
-            value={this.state.date}
+            placeholder={this.state.selectedDate}
+            value={this.state.selectedDate}
             onChange={this.handleDateChange}
             className="datepicker"
           />
-          <p>state.date: {this.state.date}</p>
+          <p>state.selectedDate: {this.state.selectedDate}</p>
           <p>modifiedDate: {this.state.modifiedDate}</p>
         </form>
     )
