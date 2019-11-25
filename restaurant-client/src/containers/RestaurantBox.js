@@ -49,8 +49,6 @@ class RestaurantBox extends Component {
 
   handleSubmit(formData) {
     console.log(formData.table)
-    const customerData = null;
-    const bookingData = null;
     console.log(formData)
 
     fetch("http://localhost:8080/customers", {

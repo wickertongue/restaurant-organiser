@@ -27,24 +27,22 @@ class Table extends Component {
   }
 
   render() {
-    const { tableData } = this.props
-    const { bookingData } = this.props
+
     const filteredBookingsByDate = this.showBookingsBySelectedDate();
-    const bookingSpans = filteredBookingsByDate.map(booking =>
-      <span
-        key={booking.id}>
+    filteredBookingsByDate.map(booking =>
+      <span key={booking.id}>
           <table>
             <tr>
               <th>Name:</th>
-              <td>{booking.customer.name}</td>
+              <td key={booking.id}>{booking.customer.name}</td>
             </tr>
             <tr>
               <th>Date:</th>
-              <td>{booking.date}</td>
+              <td key={booking.id}>{booking.date}</td>
             </tr>
             <tr>
               <th>Time:</th>
-              <td>{booking.time}</td>
+              <td key={booking.id}>{booking.time}</td>
             </tr>
           </table>
       </span>
@@ -59,8 +57,7 @@ class Table extends Component {
         <h3>Table {this.props.tableData.id}</h3>
         {
           filteredBookingsByDate.map(booking =>
-            <span
-            key={booking.id}>
+            <span>
               <p>Name: {booking.customer.name}</p>
               <p>Booked on: {booking.date}</p>
               <p>At: {booking.time}</p>
