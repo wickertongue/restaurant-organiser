@@ -6,7 +6,7 @@ class Calendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: null,
+      date: "",
       modifiedDate: this.manageDate()
     }
     this.handleDateChange = this.handleDateChange.bind(this);
