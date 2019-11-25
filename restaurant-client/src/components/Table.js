@@ -20,7 +20,7 @@ class Table extends Component {
   showBookingsBySelectedDate() {
     if (!this.props.tableData._embedded) {
       return [];
-    } 
+    }
     return this.props.tableData._embedded.bookings.filter(booking => {
       return this.props.selectedDate === booking.date
     })
@@ -30,6 +30,25 @@ class Table extends Component {
     const { tableData } = this.props
     const { bookingData } = this.props
     const filteredBookingsByDate = this.showBookingsBySelectedDate();
+    const bookingSpans = filteredBookingsByDate.map(booking =>
+      <span
+        key={booking.id}>
+          <table>
+            <tr>
+              <th>Name:</th>
+              <td>{booking.customer.name}</td>
+            </tr>
+            <tr>
+              <th>Date:</th>
+              <td>{booking.date}</td>
+            </tr>
+            <tr>
+              <th>Time:</th>
+              <td>{booking.time}</td>
+            </tr>
+          </table>
+      </span>
+    )
 
     return (
       <div

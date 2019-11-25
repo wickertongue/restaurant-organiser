@@ -33,8 +33,8 @@ class Calendar extends Component {
     if (!date) {
       return
     }
-    this.props.handleSubmit({ date: date});
-    this.setState({ date: ''});
+    this.props.handleSubmit({ date: date });
+    this.setState({ date: '' });
   }
 
   render() {
