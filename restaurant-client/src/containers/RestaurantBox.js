@@ -44,7 +44,7 @@ class RestaurantBox extends Component {
       tables: tables["_embedded"].dinnerTables,
     });
 
-    this.setState({ isLoading: false})
+    this.setState({ isLoading: false })
   }
 
   handleSubmit(formData) {
@@ -59,7 +59,7 @@ class RestaurantBox extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(formData)
-    }) 
+    })
       .then(res => res.json())
       .then(customer => {
 
@@ -77,15 +77,16 @@ class RestaurantBox extends Component {
             table: 'http://localhost:8080/tables/' + formData.table
           })
         })
-          .then(res => res.json())
+          .then((res) => res.json())
           .then(booking => {
-            console.log('booking', booking)
+            const newBookings = [...this.state.bookings, booking] 
+            this.setState({ bookings: newBookings });
           })
       })
   };
 
   handleSelectedDate(date) {
-    this.setState({selectedDate: date});
+    this.setState({ selectedDate: date });
   }
 
   render() {

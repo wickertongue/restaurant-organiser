@@ -15,9 +15,9 @@ class TableLayout extends Component {
         {this.props.tableData.map(table => 
           <Table 
             tableData={table}
-            selectedDate={this.props.selectedDate} 
+            selectedDate={this.props.selectedDate}
             key={table.id} />
-        )
+          )
         }
       </div>
     )

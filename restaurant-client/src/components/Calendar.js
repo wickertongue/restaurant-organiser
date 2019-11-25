@@ -9,7 +9,7 @@ class Calendar extends Component {
       date: ''
     }
     this.handleDateChange = this.handleDateChange.bind(this);
-    
+
     this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -25,8 +25,8 @@ class Calendar extends Component {
     if (!date) {
       return
     }
-    this.props.handleSubmit({ date: date});
-    this.setState({ date: ''});
+    this.props.handleSubmit({ date: date });
+    this.setState({ date: '' });
   }
 
   render() {
