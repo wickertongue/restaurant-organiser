@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BookingForm from "../components/BookingForm";
+import BookingForm from "./booking_form/BookingForm";
 
 class SideBar extends Component {
   render() {

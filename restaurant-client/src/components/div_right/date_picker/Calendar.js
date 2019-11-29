@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './Calendar.css'
 
-
 class Calendar extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +36,7 @@ class Calendar extends Component {
     this.setState({ selectedDate: '' });
   }
 
-  // changing the 'value' in the below to the modified date will present the date in the calendar - however, there then needs to be a fetch to display the data.
+  // changing the 'value' in the below to the modified date will present the date in the calendar - however, there then needs to be a fetch/setState to display the data in the table.
 
   render() {
     return (
