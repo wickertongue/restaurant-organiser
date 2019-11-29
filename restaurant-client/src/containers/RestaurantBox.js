@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import TableLayout from "../components/div_right/tables/TableLayout";
-import SideBar from "../components/div_left/SideBar";
 import Header from "../components/div_left/header/Header";
-import Calendar from "../components/div_right/date_picker/Calendar"
+import DatePicker from "../components/div_right/date_picker/DatePicker"
 
 import "./RestaurantBox.css"
+import BookingForm from "../components/div_left/booking_form/BookingForm";
 
 class RestaurantBox extends Component {
 
@@ -99,13 +99,13 @@ class RestaurantBox extends Component {
           <Header 
             handleSelectedDate={this.handleSelectedDate}
           />
-          <SideBar
+          <BookingForm 
             tableData={this.state.data}
             handleSubmit={this.handleSubmit}
           />
         </div> 
         <div className="right">
-          <Calendar
+          <DatePicker
             handleSelectedDate={this.handleSelectedDate}
           />
           <TableLayout 
