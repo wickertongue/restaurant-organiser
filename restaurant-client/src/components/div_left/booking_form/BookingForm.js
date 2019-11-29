@@ -33,7 +33,7 @@ class BookingForm extends Component {
     this.setState({ partySize: event.target.value })
   }
   handleTableChange(event) {
-    console.log(event)
+    console.log(event.target.value)
     this.setState({ table: event.target.value })
   }
 
@@ -119,6 +119,10 @@ class BookingForm extends Component {
               <td>
                 <input className="submit" type="submit" value="Make Booking" />
               </td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>{this.state.name}</td>
             </tr>
           </tbody>
         </table>
