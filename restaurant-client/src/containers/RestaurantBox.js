@@ -21,35 +21,38 @@ class RestaurantBox extends Component {
     this.handleSelectedDate = this.handleSelectedDate.bind(this);
   }
 
+  async bookingsFetch() {
+    const bookingData = await fetch("http://localhost:8080/bookings")
+    const bookings = await bookingData.json();
+    this.setState({
+      bookings: bookings._embedded.bookings,
+    })
+  }
+
+  async customersFetch() {
+    const customerData = await fetch("http://localhost:8080/customers")
+    const customers = await customerData.json();
+    this.setState({
+      customers: customers._embedded.customers,
+    })
+  }
+
+  async tablesFetch() {
+    const tableData = await fetch("http://localhost:8080/dinnerTables")
+    const tables = await tableData.json();
+    this.setState({
+      tables: tables._embedded.dinnerTables,
+    })
+  }
+
   async componentDidMount() {
-
-    // customer fetch
-    const customersFetch = await fetch("http://localhost:8080/customers")
-    const customers = await customersFetch.json();
-    this.setState({
-      customers: customers["_embedded"].customers,
-    });
-
-    // booking fetch
-    const bookingFetch = await fetch("http://localhost:8080/bookings")
-    const bookings = await bookingFetch.json();
-    this.setState({
-      bookings: bookings["_embedded"].bookings,
-    });
-
-    // table fetch
-    const tableFetch = await fetch("http://localhost:8080/dinnerTables")
-    const tables = await tableFetch.json();
-    this.setState({
-      tables: tables["_embedded"].dinnerTables,
-    });
-
+    // this.customersFetch()
+    this.bookingsFetch()
+    this.tablesFetch()
     this.setState({ isLoading: false })
   }
 
   handleSubmit(formData) {
-    console.log(formData.table)
-    console.log(formData)
 
     fetch("http://localhost:8080/customers", {
       method: 'POST',
@@ -76,10 +79,7 @@ class RestaurantBox extends Component {
           })
         })
           .then((res) => res.json())
-          .then(booking => {
-            const newBookings = [...this.state.bookings, booking] 
-            this.setState({ bookings: newBookings });
-          })
+          .then(this.bookingsFetch())
       })
   };
 

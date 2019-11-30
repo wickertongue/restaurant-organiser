@@ -33,12 +33,10 @@ class BookingForm extends Component {
     this.setState({ partySize: event.target.value })
   }
   handleTableChange(event) {
-    console.log(event.target.value)
     this.setState({ table: event.target.value })
   }
 
   onSubmit(event) {
-    console.log(event)
     event.preventDefault(event);
     const name = this.state.name.trim();
     const date = this.state.date.trim();
