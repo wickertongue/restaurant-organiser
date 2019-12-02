@@ -91,7 +91,7 @@ class RestaurantBox extends Component {
 
   formatTodaysDate() {
     let today = new Date()
-    const day = "" + today.getDate();
+    const day = ("0" + today.getDate()).slice(-2);
     const month = "" + (today.getMonth() + 1);
     const year = "" + today.getFullYear();
     return [year, month, day].join("-")
