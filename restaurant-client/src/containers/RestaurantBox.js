@@ -15,7 +15,7 @@ class RestaurantBox extends Component {
       tables: [],
       bookings: [],
       isLoading: true,
-      selectedDate: this.formatTodaysDate()
+      selectedDate: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSelectedDate = this.handleSelectedDate.bind(this);
@@ -49,7 +49,10 @@ class RestaurantBox extends Component {
     // this.customersFetch()
     this.bookingsFetch()
     this.tablesFetch()
-    this.setState({ isLoading: false })
+    this.setState({ 
+      isLoading: false,
+      todaysDate: this.formatTodaysDate()
+    })
   }
 
   handleSubmit(formData) {
@@ -87,8 +90,6 @@ class RestaurantBox extends Component {
     this.setState({ selectedDate: date });
   }
 
-  // the below needs to be able to add a leading zero before the start of the day in the month as the 0 is begin removed and this means the date cannot be picked up by the datepicker.
-
   formatTodaysDate() {
     let today = new Date()
     const day = ("0" + today.getDate()).slice(-2);
@@ -118,6 +119,7 @@ class RestaurantBox extends Component {
           <DatePicker
             handleSelectedDate={this.handleSelectedDate}
             selectedDate={this.state.selectedDate}
+            todaysDate={this.state.todaysDate}
           />
           <TableLayout 
             bookingData={this.state.bookings}

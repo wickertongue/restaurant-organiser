@@ -25,10 +25,8 @@ class TableLayout extends Component {
           } else {
             console.log(table.id, table._embedded.bookings)
           }
+        })
         }
-        )
-        }
-
       </div>
     )
   }
