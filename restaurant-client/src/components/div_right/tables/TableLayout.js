@@ -2,24 +2,17 @@ import React, { Component } from 'react';
 import Table from './Table';
 import './TableLayout.css'
 
-class TableLayout extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
-  }
-
-  render() {
-    return (
+function TableLayout(props) {
+      return (
       <div className="tables">
-        {this.props.tableData.map(table =>
+        {props.tableData.map(table =>
           <Table
             tableData={table}
-            selectedDate={this.props.selectedDate}
+            selectedDate={props.selectedDate}
             key={table.id} />
         )
         }
-        {this.props.tableData.forEach(table => {
+        {props.tableData.forEach(table => {
           if (!table._embedded) {
             console.log(table.id, "No Booking")
           } else {
@@ -29,7 +22,6 @@ class TableLayout extends Component {
         }
       </div>
     )
-  }
 }
 
 export default TableLayout;
