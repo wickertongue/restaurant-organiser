@@ -87,6 +87,8 @@ class RestaurantBox extends Component {
     this.setState({ selectedDate: date });
   }
 
+  // the below needs to be able to add a leading zero before the start of the day in the month as the 0 is begin removed and this means the date cannot be picked up by the datepicker.
+
   formatTodaysDate() {
     let today = new Date()
     const day = "" + today.getDate();
@@ -115,6 +117,7 @@ class RestaurantBox extends Component {
         <div className="right">
           <DatePicker
             handleSelectedDate={this.handleSelectedDate}
+            selectedDate={this.state.selectedDate}
           />
           <TableLayout 
             bookingData={this.state.bookings}

@@ -40,7 +40,7 @@ class DatePicker extends Component {
             onChange={this.handleDateChange}
             className="datepicker"
           />
-          <p>state.selectedDate: {this.state.selectedDate}</p>
+          <p>state.selectedDate: {this.props.selectedDate}</p>
           <p>state.today: {this.state.today}</p>
         </form>
     )
