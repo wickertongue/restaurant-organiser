@@ -37,7 +37,7 @@ class Calendar extends Component {
             placeholder="Date"
             value={this.state.date}
             onChange={this.handleDateChange}
-            class="datepicker"
+            className="datepicker"
           />
         </form>
     )
