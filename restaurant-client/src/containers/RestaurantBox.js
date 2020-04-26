@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import TableLayout from "../components/TableLayout";
-import SideBar from "../components/SideBar";
-import Header from "../components/Header";
-import Calendar from "../components/Calendar"
+import TableLayout from "../components/table_layout/TableLayout.js";
+import SideBar from "../components/sidebar/SideBar";
+import Header from "../components/header/Header";
+import Calendar from "../components/calendar/Calendar"
 
 import "./RestaurantBox.css"
 
