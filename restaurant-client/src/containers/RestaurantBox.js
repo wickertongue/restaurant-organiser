@@ -15,8 +15,7 @@ class RestaurantBox extends Component {
       tables: [],
       bookings: [],
       isLoading: true,
-      selectedDate: null,
-      today: this.formatTodaysDate()
+      selectedDate: this.formatTodaysDate()
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSelectedDate = this.handleSelectedDate.bind(this);
@@ -55,7 +54,7 @@ class RestaurantBox extends Component {
     const today = new Date();
     const year = '' + today.getFullYear();
     let month = '' + (today.getMonth() + 1);
-    let day = today.getDate();
+    const day = today.getDate();
 
     if (month.length < 2)
       month = '0' + month;
@@ -65,8 +64,6 @@ class RestaurantBox extends Component {
     const date = [year, month, day].join('-');
 
     return date;
-    console.log(today)
-    console.log(date)
   }
 
   handleSubmit(formData) {
